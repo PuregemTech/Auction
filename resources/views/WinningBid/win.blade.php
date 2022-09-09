@@ -343,7 +343,7 @@
                             <h5 class="title" style="color: #693ff5;">Auction Categories</h5>
                             <ul class="links-list">
                                 <li>
-                                    <a href="#0" style="color: #693ff5;">Books</a>
+                                    <a href="#0" style="color: #693ff5;">{{ __('messages.category1') }}</a>
                                 </li>
                                 <li>
                                     <a href="#0" style="color: #693ff5;">Clothes</a>
@@ -352,32 +352,44 @@
                                     <a href="#0">Watches</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Electronics</a>
+                                    <a href="#0">Shoes</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Jewelry</a>
+                                    <a href="#0">Jewelries</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Sports</a>
+                                    <a href="#0">Bags</a>
+                                </li>
+                                <li>
+                                    <a href="#0">Accessories</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="footer-widget widget-links">
-                            <h5 class="title">About Us</h5>
+                            <h5 class="title">Easy Access</h5>
                             <ul class="links-list">
-                                <li>
+                                <!-- <li>
                                     <a href="#0">About Multilingual Online Auction System</a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a href="#0">Auction</a>
                                 </li>
                                 <li>
-                                    <a href="{{route("upload")}}">Sell</a>
+                                    <a href="#0">Sell</a>
                                 </li>
                                 <li>
-                                    <a href="#0">Help</a>
+                                    <a href="#0">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="#0">Personal Profile</a>
+                                </li>
+                                <li>
+                                    <a href="#0">My Bids</a>
+                                </li>
+                                <li>
+                                    <a href="#0">Notifications</a>
                                 </li>
                             </ul>
                         </div>
@@ -389,18 +401,18 @@
                                 <li>
                                     <a href="#0">Your Account</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#0">Safe and Secure</a>
                                 </li>
                                 <li>
                                     <a href="#0">Shipping Information</a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a href="#0">Contact Us</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="#0">Help & FAQ</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -444,23 +456,6 @@
             <div class="container">
                 <div class="copyright-area">
                     <div class="footer-bottom-wrapper">
-                        <!-- <div class="logo">
-                            <a href="index.html"><img src="assets/images/logo/footer-logo.png" alt="logo"></a>
-                        </div> -->
-                        <ul class="gateway-area">
-                            <li>
-                                <a href="#0"><img src="../assets/images/footer/paypal.png" alt="footer"></a>
-                            </li>
-                            <li>
-                                <a href="#0"><img src="../assets/images/footer/visa.png" alt="footer"></a>
-                            </li>
-                            <li>
-                                <a href="#0"><img src="../assets/images/footer/discover.png" alt="footer"></a>
-                            </li>
-                            <li>
-                                <a href="#0"><img src="../assets/images/footer/mastercard.png" alt="footer"></a>
-                            </li>
-                        </ul>
                         <div class="copyright">
                             <p>&copy; Copyright 2022 | <a href="#0">Multilingual Online Auction System</a> By <a href="#0">Ademola Toheeb Opeyemi</a></p>
                         </div>

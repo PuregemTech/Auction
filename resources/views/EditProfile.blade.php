@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Sbidu - Bid And Auction HTML Template</title>
+    <title>Multilingual Online Auction System</title>
 
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/all.min.css">
@@ -387,7 +387,7 @@
                         <!-- <div class="logo">
                             <a href="index.html"><img src="assets/images/logo/footer-logo.png" alt="logo"></a>
                         </div> -->
-                        <ul class="gateway-area">
+                        <!-- <ul class="gateway-area">
                             <li>
                                 <a href="#0"><img src="../../assets/images/footer/paypal.png" alt="footer"></a>
                             </li>
@@ -400,7 +400,7 @@
                             <li>
                                 <a href="#0"><img src="../../assets/images/footer/mastercard.png" alt="footer"></a>
                             </li>
-                        </ul>
+                        </ul> -->
                         <div class="copyright">
                             <p>&copy; Copyright 2022 | <a href="#0">Multilingual Online Auction System</a> By <a href="#0">Ademola Toheeb Opeyemi</a></p>
                         </div>
