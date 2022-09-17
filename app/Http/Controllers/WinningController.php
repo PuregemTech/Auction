@@ -15,7 +15,15 @@ class WinningController extends Controller
 
     public function Index()
     {
-        $products=[];
+        $bidders = DB::table('products')
+            ->join('buyers', 'products.id', '=', 'buyers.user_id')
+            ->where('products.ended_bid', '=', '1')
+            ->where('buyers', '=', '1')
+
+            ->get();
+        
+        dd($bidders);
+
 
 
 
