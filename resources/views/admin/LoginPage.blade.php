@@ -16,7 +16,7 @@
         <img src="images/logo.jpg" alt="">
     </div> -->
     <div class="container-fluid login mb-3 pb-5" style="margin-top: 10%;">
-        <form   method="POST" action="{{ route('login') }}">
+        <form   method="POST"  action="{{ route('admin.login.submit') }}">
             @csrf
             <div class="form-title">
                 <h4 class="text-center">Multilingual Online Auction System</h4>
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <div class="input-container">
                     <i class="fas fa-sign-in-alt icon"></i>
-                    <input type="text" class="form-control" placeholder="" id="demo" name="email" required="">
+                    <input type="text" class="form-control"  placeholder="" id="demo" name="email" >
                     <label for="">Enter Your Email</label>
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>
@@ -45,7 +45,7 @@
             <div class="form-group">
                 <div class="input-container">
                     <i class="fas fa-lock icon"></i>
-                    <input type="password" class="form-control" placeholder="" id="numeric_input" name="password" required="" maxlength="4" title="Input 4 digits pin">
+                    <input type="password" class="form-control" placeholder="" id="numeric_input" name="password"  >
                     <label for="">Password</label>
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>

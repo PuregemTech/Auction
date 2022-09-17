@@ -156,17 +156,18 @@
                         <div class="user">
                             <div class="thumb-area">
                                 @if (Auth::user()->picture==NULL ||Auth::user()->picture== " ")
-                                <img src="../../assets/images/dashboard/user.png" alt="user">
+                                
                                     
                                 @else
                                 <img src="{{ asset('/profile_picture/'.Auth::user()->picture) }}"  alt="user"  style="width: 100px;height:100px;">  
                                 @endif
-                                <label for="profile-pic" class="profile-pic-edit"><i class="flaticon-pencil"></i></label>
-                                <input type="file" id="profile-pic" class="d-none">
+                                
                             </div>
                             <div class="content">
                                 <h5 class="title"><a href="#0">{{Auth::user()->name}}</a></h5>
-                                <span class="username"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="771d181f1937101a161e1b5914181a">[email&#160;protected]</a></span>
+                                <span class="username"><a>
+                                {{Auth::user()->email}}  
+                                </a></span>
                             </div>
                         </div>
                         <ul class="dashboard-menu">
@@ -222,7 +223,7 @@
                         </div>
                     </div>
                     <div class="dashboard-widget">
-                        <h5 class="title mb-10">Purchasing</h5>
+                        <h5 class="title mb-10"></h5>
                         <div class="dashboard-purchasing-tabs">
                             <ul class="nav-tabs nav">
                                 <li>
@@ -389,7 +390,7 @@
                                     <a href="#0"><i class="fas fa-blender-phone"></i>+2348132933439</a>
                                 </li> -->
                                 <li>
-                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">[email&#160;protected]</span></a>
+                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">{{Auth::user()->email}}</span></a>
                                 </li>
                                 <li>
                                     <a href="#0"><i class="fas fa-location-arrow"></i>UNIOSUN</a>

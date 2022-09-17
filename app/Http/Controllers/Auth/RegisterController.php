@@ -76,6 +76,7 @@ class RegisterController extends Controller
             'department' => $data['department'],
             'mobile' => $data['mobile'],
             'user_type' => isset($data['user_type']) ? $data['user_type'] : '1',
+            'gender' => isset($data['gender']) ? $data['gender'] : '',
             'status' => isset($data['status']) ? $data['status'] : '2',
 
             'dob' => isset($data['dob']) ? $data['dob'] : ' ',

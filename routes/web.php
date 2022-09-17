@@ -139,22 +139,32 @@ Route::group(['prefix' => 'admin'], function () {
         App\Http\Controllers\AdminController::class,
         'ManageUser',
     ])->name('AdminUserDashboard');
+
+
+
+
     Route::get('user/{id}', [
         App\Http\Controllers\AdminController::class,
         'ViewUserAdmin',
     ])->name('ViewUserAdmin');
+
+
     Route::post('users/{id}', [
         App\Http\Controllers\AdminController::class,
         'BlockUserAdmin',
     ])->name('BlockUserAdmin');
+
     Route::post('users/block/{id}', [
         App\Http\Controllers\AdminController::class,
         'UnBlockUserAdmin',
     ])->name('UnBlockUserAdmin');
+
     Route::get('product', [
         App\Http\Controllers\AdminController::class,
         'AdminProduct',
     ])->name('AdminProduct');
+
+
     Route::post('product/delete/{id}', [
         App\Http\Controllers\AdminController::class,
         'AdminProductDelete',
@@ -224,11 +234,17 @@ Route::group(['prefix' => 'admin'], function () {
         App\Http\Controllers\AdminController::class,
         'AdminLogout',
     ])->name('AdminLogout');
-    Route::get('login', [
-        App\Http\Controllers\AdminController::class,
-        'LoginPage',
-    ])->name('LoginPage');
+
+
+
+    Route::get('login', [App\Http\Controllers\AdminController::class, 'LoginPage'])->name('LoginPage');
+    Route::post('login', [App\Http\Controllers\AdminController::class, 'SubmitLogin'])->name('admin.login.submit');
+
+
 });
+
+
+
 
 Route::group(['prefix' => 'contact'], function () {
     Route::get('/', [

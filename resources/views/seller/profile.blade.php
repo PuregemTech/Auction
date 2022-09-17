@@ -156,17 +156,17 @@
                         <div class="user">
                             <div class="thumb-area">
                                 @if (Auth::user()->picture==NULL ||Auth::user()->picture== " ")
-                                <img src="../../assets/images/dashboard/user.png" alt="user">
-                                    
+                              
                                 @else
                                 <img src="{{ asset('/profile_picture/'.Auth::user()->picture) }}"  alt="user"  style="width: 100px;height:100px;">  
                                 @endif
-                                <label for="profile-pic" class="profile-pic-edit"><i class="flaticon-pencil"></i></label>
-                                <input type="file" id="profile-pic" class="d-none">
+                              
                             </div>
                             <div class="content">
                                 <h5 class="title"><a href="#0">{{Auth::user()->name}}</a></h5>
-                                <span class="username"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f993969197b99e94989095d79a9694">[email&#160;protected]</a></span>
+                                <span class="username"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f993969197b99e94989095d79a9694">
+                                {{Auth::user()->email}}
+                                </a></span>
                             </div>
                         </div>
                         <ul class="dashboard-menu">
@@ -209,7 +209,7 @@
                                     </li>
                                     <li>
                                         <div class="info-name">{{ __('messages.EmailAddress') }}</div>
-                                        <div class="info-value"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d303e392e286f68651c3b313d3530723f3331">[email&#160;protected]</a></div>
+                                        <div class="info-value"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d303e392e286f68651c3b313d3530723f3331">{{Auth::user()->email}}</a></div>
                                     </li>
                                     <li>
                                         <div class="info-name">{{ __('messages.phone') }}</div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Buyer;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Product;
@@ -15,6 +16,10 @@ class AdminController extends Controller
 {
     //
 
+
+
+
+
     public function AdminLogout()
     {
         Auth::logout();
@@ -23,7 +28,31 @@ class AdminController extends Controller
 
     public function LoginPage()
     {
+
+
         return view("admin.LoginPage");
+    }
+
+
+
+    public function SubmitLogin(Request $request)
+    {
+
+
+
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required'
+        ]);
+        // Attempt to log the user in
+        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
+            // if successful, then redirect to their intended location
+            return redirect()->intended(route('AdminUserDashboard'));
+        }
+
+
+        // if unsuccessful, then redirect back to the login with the form data
+        return redirect()->back()->withInput($request->only('email', 'remember'));
     }
 
 
@@ -197,10 +226,12 @@ class AdminController extends Controller
         $products = Product::all();
         $contacts = Contact::all();
 
-        $BidProduct =  DB::table('products')->join('buyers', 'buyers.product_id', '=', 'products.id')->orderBy('id', 'desc');
+       
+
+      
 
 
-        return view('admin.AdminBid', compact("allUser", 'allCategories', 'products', 'contacts'));
+        return view('admin.AdminBid', compact("allUser", 'allCategories', 'products', ));
     }
 
 

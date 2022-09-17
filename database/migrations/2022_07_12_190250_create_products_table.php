@@ -19,11 +19,11 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('condition');
             $table->string('category');
-            $table->string('category_name');
             $table->string('cover_image');
             $table->string('uniqueId');
             $table->longText('description');
             $table->string('starting_date')->nullable();
+            $table->string('gender')->nullable();
             $table->string('ending_date')->nullable();
             $table->string('ended_bid')->nullable();
             $table->string('price');

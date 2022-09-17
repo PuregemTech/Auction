@@ -72,7 +72,6 @@ return [
     "max" => "Maximum of 6 pictures",
     'product_d' => "Product Description",
     "Personal_Profile" => "Personal Profile",
-    "PD" => "Personal Details",
     "my_item" => "My Item",
     "sell" => "Sell",
     "message2" => "Online jewelry auctions where you can bid for your favorites jewelry",

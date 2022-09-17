@@ -37,15 +37,13 @@
     <header>
         <div class="header-top">
             <div class="container">
-                <div class="header-top-wrapper">
-                  @include('component.trans')
-                </div>
+                @include('component.trans')
             </div>
         </div>
         <div class="header-bottom">
             <div class="container">
                 <div class="header-wrapper">
-                  @include('component.header')
+                    @include('component.header')
                     <div class="search-bar d-md-none">
                         <a href="#0"><i class="fas fa-search"></i></a>
                     </div>
@@ -143,9 +141,23 @@
             <div class="account-wrapper mt--100 mt-lg--440">
                 <div class="left-side">
                     <div class="section-header">
-                        <h2 class="title">{{ __('messages.RegBuyer') }}</h2>
-                        {{-- <p>We're happy you're here!</p> --}}
+                        <h4 class="title">{{ __('messages.RegBuyer') }}</h4>
+                        <p>{{ __('messages.happy') }}</p>
                     </div>
+                    @if(count($errors) > 0 )
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <ul class="p-0 m-0" style="list-style: none;">
+                        @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
+
                     <!-- <ul class="login-with">
                         <li>
                             <a href="#0"><i class="fab fa-facebook"></i>Log in with Facebook</a>
@@ -157,164 +169,269 @@
                     <!-- <div class="or">
                         <span>Or</span>
                     </div> -->
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" class="login-form">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('messages.Name') }}</label>
+                        <div class="form-group ">
+                            <label for="login-email"><i class="fas fa-file-signature"></i></label>
+                            <input type="text" id="fullname" placeholder="Full Name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" >
+{{-- 
+                            @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror --}}
+                        </div>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+
+                        <div class="form-group mb-30">
+                            <label for="login-email"><i class="fas fa-file-signature"></i></label>
+                            <input type="text" id="" placeholder="Your Department" id="department" type="department" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ old('department') }}"  autocomplete="department">
+                       
+{{--                        
+                            @error('department')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror --}}
+                        </div>
+
+
+
+
+
+
+                        <div class="form-group mb-30">
+                            <label for="login-email"><i class="fas fa-file-signature"></i></label>
+                            <input type="text" id="" placeholder="Your Matric Number" id="matric_no" type="matric_no" class="form-control @error('matric_no') is-invalid @enderror" name="matric_no" value="{{ old('matric_no') }}" >
+{{--                         
+                            @error('matric_no')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror --}}
+                        
+                        </div>
+
+
+
+                        <div class="form-group mb-30">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="" style="padding-top: 7px; margin-bottom: 0; margin-left: -15px;">Gender:</label>
+                                </div>
+                                <div class="col-md-9" style="display: flex;">
+                                    <span><input type="radio" name="gender" value="male" checked style="height: 15px; margin-right: 20px;"> Male</span>
+                                    <span><input type="radio" name="gender" value="female" style="height: 15px;"> Female</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('messages.EmailAddress') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
 
-                                @error('email')
+
+
+
+
+
+
+
+                        <div class="form-group mb-30">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label for="" style="padding-top: 7px; margin-bottom: 0; margin-left: -15px;">Date Of Birth</label>
+                                </div>
+                                <div class="col-md-9">
+                                    <input type="date" class="form-control-file border @error('dob') is-invalid @enderror" name="dob" value="{{ old('dob') }}"  autocomplete="dob">
+                                </div>
+                            </div>
+
+                            {{-- @error('dob')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror --}}
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="form-group mb-30">
+                            <label for="login-email"><i class="far fa-envelope"></i></label>
+                            <input type="text" id="email" placeholder="{{ __('messages.EmailAddress') }}" 
+                            type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
+                            {{-- @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
+                                @enderror --}}
                         </div>
 
-                        <div class="row mb-3">
 
-                            <div class="col-md-6">
-                                <input id="user_type" type="hidden" class="form-control @error('user_type') is-invalid @enderror" name="user_type" value="2"  autocomplete="email">
 
-                                @error('email')
+                        <div class="form-group mb-30">
+                            <label for="login-email"><i class="fas fa-address-card"></i></label>
+                            <input type="text" id="address" placeholder="Address" 
+                            class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" 
+
+                            >
+{{-- 
+                            @error('address')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror --}}
+                        </div>
+
+
+                        <div class="form-group mb-30">
+                            <label for=""><i class="fas fa-phone"></i></label>
+                            <input type="text" id="" placeholder="Phone Number" 
+                            type="mobile" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}"  autocomplete="mobile">
+                      
+
+                            {{-- @error('mobile')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror --}}
+                      
+                        </div>
+
+
+
+                  
+
+
+
+
+
+
+
+
+
+
+                        <div class="form-group mb-30">
+                            <label for="login-pass"><i class="fas fa-lock"></i></label>
+                            <input type="password" id="login-pass" placeholder="{{ __('messages.password') }}" 
+                           class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
+                            <span class="pass-type"><i class="fas fa-eye"></i></span>
+
+
+                            {{-- @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
+                                @enderror --}}
                         </div>
+
+
+                     
+
+
+
+                        <div class="form-group mb-30">
+                            <label for="login-pass"><i class="fas fa-lock"></i></label>
+                            <input type="password" id="login-pass" placeholder="{{ __('messages.ConfirmPassword') }}" 
+                           class="form-control @error('password') is-invalid @enderror" name="password_confirmation"   autocomplete="new-password">
+                            <span class="pass-type"><i class="fas fa-eye"></i></span>
+
+
+                            {{-- @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror --}}
+                        </div>
+
+                  
+                     
+
+                      
+
+
+
+                     
+
+
+
+
+
+
+
+                    
+
+                      
+
+
+
+
+
+
+                        
+
+
+                      
+                      
+
+
+
+
+
+
+
+                     
+
+
+
+
+
+
+
+
+                     
 
 
                         <!-- Matric Number -->
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Matric No.') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="matric_no" type="matric_no" class="form-control @error('matric_no') is-invalid @enderror" name="matric_no" value="{{ old('matric_no') }}" >
-
-                                @error('matric_no')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('messages.Department') }}</label>
-                            
-                            <div class="col-md-6">
-                                <input id="department" type="department" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ old('department') }}"  autocomplete="department">
-
-                                @error('department')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        
-
-                        <div class="row mb-3">
-                            <label for="mobile" class="col-md-4 col-form-label text-md-end">{{ __('messages.phone') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="mobile" type="mobile" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}"  autocomplete="mobile">
-
-                                @error('mobile')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="dob" class="col-md-4 col-form-label text-md-end">{{ __('messages.dob') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="dob" type="date" class="form-control @error('dob') is-invalid @enderror" name="dob" value="{{ old('dob') }}"  autocomplete="dob">
-
-                                @error('dob')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                       
 
 
 
 
-                        <div class="row mb-3">
-                            <label for="address" class="col-md-4 col-form-label text-md-end">{{ __('messages.Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="address" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}"  autocomplete="address">
-
-                                @error('address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        
                         
 
 
 
 
+                      
+
+                  
+
+
+                     
+
+                        
+                        
+                        
 
 
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('messages.password') }}</label>
+                        
+                        {{-- BankName --}}
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            {{-- ConfirmPassword --}}
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('messages.ConfirmPassword') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password">
-                            </div>
-                        </div>
+                        
+            
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('messages.register1') }}
+                                    {{ __('Register') }}
                                 </button>
                             </div>
                         </div>
@@ -322,11 +439,10 @@
                 </div>
                 <div class="right-side cl-white">
                     <div class="section-header mb-0">
-                        {{-- ALREADYHAVEANACCOUNT --}}
                         <h3 class="title mt-0">{{ __('messages.ALREADYHAVEANACCOUNT') }}</h3>
-                        <p>{{ __('messages.loginDashboard') }}.</p>
-                        <a href="/login" class="custom-button transparent">
-                            {{ __('messages.Login') }}</a>
+                        {{-- "loginDashboard" --}}
+                        <p>{{ __('messages.loginDashboard') }}</p>
+                        <a href="/login" class="custom-button transparent">Login</a>
                     </div>
                 </div>
             </div>
@@ -360,6 +476,25 @@
                 <img src="../assets/images/footer/c4.png" alt="footer">
             </div>
         </div>
+        <!-- <div class="newslater-wrapper">
+            <div class="container">
+                <div class="newslater-area">
+                    <div class="newslater-thumb">
+                        <img src="assets/images/footer/newslater.png" alt="footer">
+                    </div>
+                    <div class="newslater-content">
+                        <div class="section-header left-style mb-low">
+                            <h5 class="cate">Subscribe to Sbidu</h5>
+                            <h3 class="title">To Get Exclusive Benefits</h3>
+                        </div>
+                        <form class="subscribe-form">
+                            <input type="text" placeholder="Enter Your Email" name="email">
+                            <button type="submit" class="custom-button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> -->
         <div class="footer-top padding-bottom padding-top">
             
         </div>

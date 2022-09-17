@@ -92,7 +92,12 @@
                         </p>
                         @if (Auth::check()&& Auth::user()->user_type==1)
                         <a href="{{route("upload")}}" class="custom-button yellow btn-large">{{ __('messages.getStarted') }}</a>
-                        @else
+                        @elseif(Auth::check()&& Auth::user()->user_type==2)
+                      <a href="{{route("all")}}" class="custom-button yellow btn-large">{{ __('messages.getStarted') }}</a>
+                      @elseif(!Auth::check())
+                      <a href="/login" class="custom-button yellow btn-large">{{ __('messages.getStarted') }}</a>
+
+                      @elseif(Auth::check())
                       <a href="{{route("all")}}" class="custom-button yellow btn-large">{{ __('messages.getStarted') }}</a>
                       @endif
                     </div>
@@ -315,7 +320,7 @@
     <div class="container">
         <div class="call-wrapper cl-white bg_img" data-background="assets/images/call-in/call-bg.png">
             <div class="section-header">
-                <h3 class="title">{{ __('messages.message3') }}}</h3>
+                <h3 class="title">{{ __('messages.message3') }}</h3>
                 <!-- <p>From cars to diamonds to iPhones, we have it all.</p> -->
             </div>
             <a href="/register" class="custom-button white">{{ __('messages.register1') }}</a>
@@ -642,7 +647,13 @@
                                     <a href="#0"><i class="fas fa-blender-phone"></i>+2348132933439</a>
                                 </li> -->
                                 <li>
-                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">[email&#160;protected]</span></a>
+                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">
+                                    @if (Auth::check())
+
+                                    {{Auth::user()->email}}
+                                    @endif    
+                                    
+                                    </span></a>
                                 </li>
                                 <li>
                                     <a href="#0"><i class="fas fa-location-arrow"></i>UNIOSUN</a>

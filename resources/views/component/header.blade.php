@@ -26,7 +26,7 @@
     <a>{{ __('messages.Dashboard') }}   </a>
     <ul class="submenu">
         <li>
-            <a href="{{route("myitem")}}">
+            <a href="{{route("SellerDashboard")}}">
                 {{ __('messages.Dashboard') }}        </a>
         </li>
         <li>

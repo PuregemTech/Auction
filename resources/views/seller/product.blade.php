@@ -266,7 +266,7 @@
                             </div>
                         @endif
                             
-                            .</p>.</p>
+                            </p></p>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{route('upload')}}" enctype="multipart/form-data">

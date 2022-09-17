@@ -642,7 +642,7 @@
                                     <a href="#0"><i class="fas fa-blender-phone"></i>+2348132933439</a>
                                 </li> -->
                                 <li>
-                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">[email&#160;protected]</span></a>
+                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">{{Auth::user()->email}}</span></a>
                                 </li>
                                 <li>
                                     <a href="#0"><i class="fas fa-location-arrow"></i>UNIOSUN</a>

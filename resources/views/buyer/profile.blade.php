@@ -152,24 +152,22 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-10 col-md-7 col-lg-4">
-                    <div class="dashboard-widget mb-30 mb-lg-0 sticky-menu">
+                    <div class="dashboard-widget mb-30 mb-lg-0">
                         <div class="user">
                             <div class="thumb-area">
                                 @if (Auth::user()->picture==NULL ||Auth::user()->picture== " ")
-                                <img src="../../assets/images/dashboard/user.png" alt="user">
+                                
                                     
                                 @else
                                 <img src="{{ asset('/profile_picture/'.Auth::user()->picture) }}"  alt="user"  style="width: 100px;height:100px;">  
                                 @endif
-                               <form method="POST" action="{{route('updatePicture')}}" enctype="multipart/form-data">
-                                @csrf
-                                <label for="profile_pic" class="profile-pic-edit"><i class="flaticon-pencil"></i></label>
-                                <input type="file" id="profile-pic" name="profile_pic" class="d-none">
-                               </form>
+                                
                             </div>
                             <div class="content">
                                 <h5 class="title"><a href="#0">{{Auth::user()->name}}</a></h5>
-                                <span class="username"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f993969197b99e94989095d79a9694">[email&#160;protected]</a></span>
+                                <span class="username"><a>
+                                {{Auth::user()->email}}  
+                                </a></span>
                             </div>
                         </div>
                         <ul class="dashboard-menu">
@@ -212,7 +210,7 @@
                                     </li>
                                     <li>
                                         <div class="info-name">{{ __('messages.EmailAddress') }}</div>
-                                        <div class="info-value"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d303e392e286f68651c3b313d3530723f3331">[email&#160;protected]</a></div>
+                                        <div class="info-value"><a href="http://pixner.net/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d303e392e286f68651c3b313d3530723f3331">{{Auth::user()->email}}</a></div>
                                     </li>
                                     <li>
                                         <div class="info-name">{{ __('messages.phone') }}</div>
@@ -371,7 +369,7 @@
                                     <a href="#0"><i class="fas fa-blender-phone"></i>+2348132933439</a>
                                 </li> -->
                                 <li>
-                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">[email&#160;protected]</span></a>
+                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">{{Auth::user()->email}}</span></a>
                                 </li>
                                 <li>
                                     <a href="#0"><i class="fas fa-location-arrow"></i>UNIOSUN</a>
