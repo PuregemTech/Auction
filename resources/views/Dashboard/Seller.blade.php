@@ -178,7 +178,7 @@
                 <div class="col-lg-8">
                     <div class="dashboard-widget mb-40">
                         <div class="dashboard-title mb-30">
-                            <h5 class="title">My Activity</h5>
+                            <h5 class="title">{{ __('messages.my_activity') }}</h5>
                         </div>
                         <div class="row justify-content-center mb-30-none">
                             <div class="col-md-6 col-sm-6">
@@ -187,8 +187,12 @@
                                         <img src="../assets/images/dashboard/01.png" alt="dashboard">
                                     </div>
                                     <div class="content">
+                                    {{-- active_sell --}}
                                         <h2 class="title"><span class="counter">{{count($allProducts)}}</span></h2>
-                                        <h6 class="info">Active Selling Items</h6>
+                                        <h6 class="info">
+                                            {{ __('messages.active_sell') }}
+
+                                        </h6>
                                     </div>
                                 </div>
                             </div>
@@ -199,7 +203,9 @@
                                     </div>
                                     <div class="content">
                                         <h2 class="title"><span class="counter">{{count($SoldItem)}}</span></h2>
-                                        <h6 class="info">Items Sold</h6>
+                                        <h6 class="info">
+                                            {{ __('messages.Items_Sold') }}
+                                        </h6>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +223,9 @@
                         </div>
                     </div>
                     <div class="dashboard-widget">
-                        <h5 class="title mb-10">Current</h5>
+                        <h5 class="title mb-10">
+                            {{ __('messages.current') }}
+                        </h5>
                         <div class="dashboard-purchasing-tabs">
                             <ul class="nav-tabs nav">
                                
@@ -229,11 +237,16 @@
                                 <div class="tab-pane show active fade" id="current">
                                     <table class="purchasing-table">
                                         <thead>
-                                            <th>Item</th>
-                                            <th>Sell Price</th>
+                                            <th>   {{ __('messages.item') }}</th>
+                                            {{-- Sell_Price --}}
+                                            <th>
+                                                {{ __('messages.Sell_Price') }}
+                                            </th>
                                             {{-- <th>Highest Bid</th>
                                             <th>Lowest Bid</th> --}}
-                                            <th>Expires</th>
+                                            <th>
+                                                {{ __('messages.expires') }}
+                                            </th>
                                         </thead>
                                         <tbody>
                                            @foreach ($allProducts as $item)

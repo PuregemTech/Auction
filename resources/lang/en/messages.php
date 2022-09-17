@@ -40,11 +40,13 @@ return [
     "Dashboard" => 'Dashboard',
     "MyBid" => "My Bid",
     'bidFeatures' => "Bid on These Featured Auctions",
-    "Items_Won"=>"Items Won",
-    "Active_Bids"=>"Active Bids",
-    "Purchasing"=>"Purchasing",
-    "bidon"=>"Bid on These Products!",
-
+    "Items_Won" => "Items Won",
+    "Active_Bids" => "Active Bids",
+    "Purchasing" => "Purchasing",
+    "bidon" => "Bid on These Products!",
+    "item"=>"Item",
+    "Sell_Price"=>"Sell Price",
+    "expires"=>"Expires",
     // Header
 
     // Header
@@ -55,7 +57,13 @@ return [
     "Login" => "Login",
     "getStarted" => "GET STARTED",
     "contact" => "Contact",
-
+    "auction_categories" => "Auction Categories",
+    "We_Help" => "We're Here to Help",
+    "follow_Us"=>"Follow Us",
+    "my_activity"=>"My Activity",
+    "active_sell"=>"Active Selling Items",
+    "Items_Sold"=>"Items Sold" ,
+    "current"=>"Current" ,
     //  SubText
     'subText1' => "Affordable Books are available",
     "NEWHERE" => "NEW WHERE",
@@ -85,7 +93,8 @@ return [
     'win' => "Win",
     'message8' => "Fun - Excitement - Great deals",
     "winbid" => "Winning Bids",
-    "profile_picture" => "Profile Picture"
+    "profile_picture" => "Profile Picture",
+    "Account_Settings"=>"Account Settings",
 
 
 

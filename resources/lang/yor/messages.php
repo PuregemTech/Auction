@@ -20,6 +20,22 @@ return [
     "register2" => "Forukọsilẹ ki o si ṣẹda Account rẹ",
     "happy" => "Inu wa dun pe o wa nibi!",
     "Name" => "Orukọ",
+    "my_activity" => "Iṣẹ-ṣiṣe Mi",
+    "active_sell" => "Ti nṣiṣe lọwọ Awọn nkan Tita",
+    "Items_Sold"=>"Awọn nkan Tita" ,
+    "current"=>"Lọwọlọwọ" ,
+    "item"=>"Nkan",
+ 
+
+
+
+
+    
+
+
+    "follow_Us" => "Tẹle wa",
+    "We_Help" => "A wa Nibi lati ṣe iranlọwọ",
+    "auction_categories" => "Awọn ẹka titaja",
     "EmailAddress" => "Adirẹsi imeeli",
     "Department" => "Ẹka.",
     "phone" => "Nomba fonu re",
@@ -36,6 +52,11 @@ return [
     "PD" => "Awọn alaye ti ara ẹni",
     "AccountName" => "Orukọ akọọlẹ",
     "BankDetails" => "Bank Awọn alaye",
+    "Sell_Price"=>"Iye owo tita",
+    "expires"=>"Ipari",
+    "Account_Settings"=>"Eto iroyin",
+
+
 
 
     "Auction" => "Titaja",
@@ -85,8 +106,8 @@ return [
     "Items_Won" => "Awọn nkan ti gba",
 
     "Active_Bids" => "Ti nṣiṣe lọwọ idu",
-    "Purchasing"=>"Rira",
-    "bidon"=>"Idu lori Awọn ọja wọnyi!",
+    "Purchasing" => "Rira",
+    "bidon" => "Idu lori Awọn ọja wọnyi!",
 
     // 
     // 

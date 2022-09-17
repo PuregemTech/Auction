@@ -221,7 +221,9 @@
                         <div class="col-12">
                             <div class="dash-pro-item mb-30 dashboard-widget">
                                 <div class="header">
-                                    <h4 class="title">Account Settings</h4>
+                                    <h4 class="title">
+                                        {{ __('messages.Account_Settings') }}
+                                    </h4>
                                     <!-- <span class="edit"><i class="flaticon-edit"></i> Edit</span> -->
                                 </div>
                                 <ul class="dash-pro-body">
