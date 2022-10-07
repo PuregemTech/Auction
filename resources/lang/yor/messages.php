@@ -22,15 +22,15 @@ return [
     "Name" => "Orukọ",
     "my_activity" => "Iṣẹ-ṣiṣe Mi",
     "active_sell" => "Ti nṣiṣe lọwọ Awọn nkan Tita",
-    "Items_Sold"=>"Awọn nkan Tita" ,
-    "current"=>"Lọwọlọwọ" ,
-    "item"=>"Nkan",
- 
+    "Items_Sold" => "Awọn nkan Tita",
+    "current" => "Lọwọlọwọ",
+    "item" => "Nkan",
 
 
 
 
-    
+
+
 
 
     "follow_Us" => "Tẹle wa",
@@ -52,9 +52,10 @@ return [
     "PD" => "Awọn alaye ti ara ẹni",
     "AccountName" => "Orukọ akọọlẹ",
     "BankDetails" => "Bank Awọn alaye",
-    "Sell_Price"=>"Iye owo tita",
-    "expires"=>"Ipari",
-    "Account_Settings"=>"Eto iroyin",
+    "Sell_Price" => "Iye owo tita",
+    "expires" => "Ipari",
+    "Account_Settings" => "Eto iroyin",
+    "PD" => 'Awọn alaye ti ara ẹni',
 
 
 
@@ -108,6 +109,8 @@ return [
     "Active_Bids" => "Ti nṣiṣe lọwọ idu",
     "Purchasing" => "Rira",
     "bidon" => "Idu lori Awọn ọja wọnyi!",
+    "congrat" => "Oriire! O ti gba idu ọja yii. Tẹ lori sanwo fun sisanwo ọja naa."
+
 
     // 
     // 

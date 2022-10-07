@@ -18,4 +18,14 @@ class NotificationContoller extends Controller
         
         return view('notification.SellerShowNotification', compact('notifications'));
     }
+
+
+    public function BuyerShowNotificaton()
+    {
+        $notifications =  $products = DB::table('notifications')
+            ->where('notifiable_id', Auth::id())
+            ->get();
+        
+        return view('notification.SellerShowNotification', compact('notifications'));
+    }
 }

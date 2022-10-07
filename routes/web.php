@@ -105,7 +105,9 @@ Route::group(['prefix' => 'winning'], function () {
     ])->name('Index');
 });
 
-Route::group(['prefix' => 'category'], function () {
+// ['middleware' => ['auth']
+
+Route::group(['prefix' => 'category',"middleware"=>"auth"], function () {
     Route::get('item/{id}', [
         App\Http\Controllers\CategoryController::class,
         'Category',

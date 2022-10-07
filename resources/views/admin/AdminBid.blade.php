@@ -115,26 +115,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-            </ul>
-
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        {{-- @include('admin.Navbar') --}}
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -157,58 +138,7 @@
                     </div>
                 </div>
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item menu-open mb-3 pb-3 user-panel">
-                            <a href="manageuser.html" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Manage Users
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item menu-open mb-3 pb-3 user-panel">
-                            <a href="manageproduct.html" class="nav-link">
-                                <i class="nav-icon fas fa-folder"></i>
-                                <p>
-                                    Manage Products
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item menu-open mb-3 pb-3 user-panel">
-                            <a href="managecategory.html" class="nav-link">
-                                <i class="nav-icon fas fa-pencil-alt"></i>
-                                <p>
-                                    Manage Categories
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item menu-open mb-3 pb-3 user-panel">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-credit-card"></i>
-                                <p>
-                                    Manage Bids
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item menu-open mb-3 pb-3 user-panel">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-language"></i>
-                                <p>
-                                    Update Language
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#0" class="nav-link">
-                                <i class="nav-icon fas fa-sign-out-alt"></i>
-                                <p>
-                                    LogOut
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                @include('admin.adminSide')
                 <!-- /.sidebar-menu -->
             </div>
             <!-- /.sidebar -->
@@ -228,7 +158,7 @@
                 </div>
                 <!-- /.container-fluid -->
             </div>
-          @include('admin.header')
+            @include('admin.header')
             <!-- <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4">
@@ -244,6 +174,11 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-7 col-md-8 mb-3 result-head">
                                 <h3 class="card-title">List Of Products Being Auctioned</h3>
+                                @if (session('deleteProduct'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('deleteProduct') }}
+                                </div>
+                            @endif
                             </div>
                             <!-- <div class="col-xs-12 col-sm-5 col-md-4 result-head">
                                 <div id="example1_filter" class="dataTables_filter">
@@ -270,36 +205,43 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>infinix Hot 10</td>
-                                                <td>Accessory</td>
-                                                <td>
-                                                    <a href="../bidder/product-details.html" class="btn btn-app">
-                                                        <i class="fas fa-edit"></i> view details
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a class="btn btn-app">
-                                                        <i class="far fa-trash-alt"></i> Delete
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>infinix Hot 10</td>
-                                                <td>Accessory</td>
-                                                <td>
-                                                    <a href="../bidder/product-details.html" class="btn btn-app">
-                                                        <i class="fas fa-edit"></i> view details
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a class="btn btn-app">
-                                                        <i class="far fa-trash-alt"></i> Delete
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                           @foreach ($products as $item)
+                                           <tr>
+                                            <td>{{$item->id}}</td>
+                                            <td>{{$item->name}}</td>
+                                            <td>
+
+
+                                            
+                                            </td>
+                                            
+
+                                            <td>
+                                                <a href="/product/bid/{{$item->id}}" class="btn btn-app">
+                                                    <i class="fas fa-edit"></i> View Product
+                                                </a>
+                                            </td>
+
+
+                                            
+                                            
+                                            <td>
+                                                <form    action="{{route('AdminProductDelete', ['id' => $item->id])}}"  method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </td>
+
+
+                                   
+
+
+                                        </tr>
+
+                                        
+                                               
+                                           @endforeach
+                                           
 
                                         </tbody>
                                     </table>
@@ -310,36 +252,7 @@
                                         Showing 1 to 10 of 5 entries
                                     </div>
                                 </div> -->
-                                <div class="col-sm-12 col-md-7">
-                                    <div class="dataTables_paginate paging_simple_numbers">
-                                        <ul class="pagination ul-pagination" style="margin-right: auto;">
-                                            <li class="paginate_button page-item previous">
-                                                <a href="" class="page-link">Previous</a>
-                                            </li>
-                                            <li class="paginate_button page-item active">
-                                                <a href="" class="page-link">1</a>
-                                            </li>
-                                            <li class="paginate_button page-item">
-                                                <a href="" class="page-link">2</a>
-                                            </li>
-                                            <li class="paginate_button page-item">
-                                                <a href="" class="page-link">3</a>
-                                            </li>
-                                            <li class="paginate_button page-item">
-                                                <a href="" class="page-link">4</a>
-                                            </li>
-                                            <li class="paginate_button page-item">
-                                                <a href="" class="page-link">5</a>
-                                            </li>
-                                            <li class="paginate_button page-item">
-                                                <a href="" class="page-link">6</a>
-                                            </li>
-                                            <li class="paginate_button page-item">
-                                                <a href="" class="page-link">Next</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -347,6 +260,7 @@
             </div>
 
             
+
 
 
 

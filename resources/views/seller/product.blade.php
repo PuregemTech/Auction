@@ -434,45 +434,9 @@
 
 
     <!--============= Footer Section Starts Here =============-->
-    <footer class="bg_img padding-top oh" data-background="../assets/images/footer/footer-bg.jpg">
-        <div class="footer-top-shape">
-            <img src="../assets/css/img/footer-top-shape.png" alt="css">
-        </div>
-        <div class="anime-wrapper">
-            <div class="anime-1 plus-anime">
-                <img src="../assets/images/footer/p1.png" alt="footer">
-            </div>
-            <div class="anime-2 plus-anime">
-                <img src="../assets/images/footer/p2.png" alt="footer">
-            </div>
-            <div class="anime-3 plus-anime">
-                <img src="../assets/images/footer/p3.png" alt="footer">
-            </div>
-            <div class="anime-5 zigzag">
-                <img src="../assets/images/footer/c2.png" alt="footer">
-            </div>
-            <div class="anime-6 zigzag">
-                <img src="../assets/images/footer/c3.png" alt="footer">
-            </div>
-            <div class="anime-7 zigzag">
-                <img src="../assets/images/footer/c4.png" alt="footer">
-            </div>
-        </div>
-        <div class="footer-top padding-bottom padding-top">
-            
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="copyright-area">
-                    <div class="footer-bottom-wrapper">
-                        <div class="copyright">
-                            <p>&copy; Copyright 2022 | <a href="#0">Multilingual Online Auction System</a> By <a href="#0">Ademola Toheeb Opeyemi</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    
+    @include('component.Footer2')
+   
     <!--============= Footer Section Ends Here =============-->
 
 

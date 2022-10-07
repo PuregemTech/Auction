@@ -58,51 +58,7 @@
                             <img src="assets/images/logo/logo.png" alt="logo">
                         </a>
                     </div> -->
-                    <ul class="menu ml-auto">
-                        <li>
-                            <a href="../index.html">Home</a>
-                        </li>
-                        <li>
-                            <a href="product.html">Auction</a>
-                        </li>
-                        <li>
-                            <a href="{{route("upload")}}">Sell</a>
-                        </li>
-                        <li>
-                            <a href="dashboard.html">Dashboard</a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href="{{route("personalProfile")}}">Personal Profile</a>
-                                </li>
-                                <li>
-                                    <a href="{{route("myitem")}}">My Bids</a>
-                                </li>
-                                <li>
-                                    <a href="winning-bids.html">Winning Bids</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notification</a>
-                                </li>
-                                <!-- <li>
-                                    <a href="my-favorites.html">My Favorites</a>
-                                </li> -->
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="sign-up.html">My Account</a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href="sign-up.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="sign-in.html">Login</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
-                    </ul>
+                   @include('component.header')
                     <!-- <form class="search-form">
                         <input type="text" placeholder="Search for products....">
                         <button type="submit"><i class="fas fa-search"></i></button>
@@ -229,7 +185,7 @@
                 <div class="col-lg-8">
                     <div class="dash-bid-item dashboard-widget mb-40-60">
                         <div class="header">
-                            <h4 class="title">Winning Bids</h4>
+                            <h4 class="title">{{ __('messages.winbid') }}</h4>
                         </div>
                         <!-- <div class="button-area justify-content-between">
                             <form class="product-search">
@@ -255,7 +211,7 @@
                         @foreach ($products as $product)
                         <div class="col-sm-10 col-md-6">
                             <div class="auction-item-2">
-                                <div>Congratulations! You have won the bid of this product. Click on pay for the payment of the product.</div>
+                                <div>{{ __('messages.congrat') }}</div>
                                 <div class="auction-thumb">
                                     <a ><img  src="{{ asset('cover/'.$product->cover_image) }}" alt="car"></a>
                                     
@@ -272,12 +228,21 @@
                                             </div>
                                             <div class="amount-content">
                                                 <div class="current"> Bid Amount</div>
-                                                <div class="amount">#${{$product->price}}</div>
+                                                <div class="amount"> &#x20A6;{{$product->price}}</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#0" class="custom-button">Pay</a>
+                                        <form method="POST" action="{{ route('pay') }}" id="paymentForm">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" name="amount" value="{{$product->price}}" /> 
+                                            <input type="hidden" name="description" value="{{$product->description}}" />
+                                            <input type="hidden" name="email" value="{{Auth::user()->email}}" /> 
+                                            <button class="custom-button" type="submit">
+                                                Pay
+                                            </button> 
+        
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -336,138 +301,28 @@
                 </div>
             </div>
         </div> -->
-        <div class="footer-top padding-bottom padding-top">
-            <div class="container">
-                <div class="row mb--60">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="footer-widget widget-links">
-                            <h5 class="title" style="color: #693ff5;">Auction Categories</h5>
-                            <ul class="links-list">
-                                <li>
-                                    <a href="#0" style="color: #693ff5;">{{ __('messages.category1') }}</a>
-                                </li>
-                                <li>
-                                    <a href="#0" style="color: #693ff5;">Clothes</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Watches</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Shoes</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Jewelries</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Bags</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Accessories</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="footer-widget widget-links">
-                            <h5 class="title">Easy Access</h5>
-                            <ul class="links-list">
-                                <!-- <li>
-                                    <a href="#0">About Multilingual Online Auction System</a>
-                                </li> -->
-                                <li>
-                                    <a href="#0">Auction</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Sell</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Personal Profile</a>
-                                </li>
-                                <li>
-                                    <a href="#0">My Bids</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Notifications</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="footer-widget widget-links">
-                            <h5 class="title">We're Here to Help</h5>
-                            <ul class="links-list">
-                                <li>
-                                    <a href="#0">Your Account</a>
-                                </li>
-                                <!-- <li>
-                                    <a href="#0">Safe and Secure</a>
-                                </li>
-                                <li>
-                                    <a href="#0">Shipping Information</a>
-                                </li> -->
-                                <li>
-                                    <a href="#0">Contact Us</a>
-                                </li>
-                                <!-- <li>
-                                    <a href="#0">Help & FAQ</a>
-                                </li> -->
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="footer-widget widget-follow">
-                            <h5 class="title">Follow Us</h5>
-                            <ul class="links-list">
-                                <li>
-                                    <a href="#0"><i class="fas fa-phone-alt"></i>+2348132933439</a>
-                                </li>
-                                <!-- <li>
-                                    <a href="#0"><i class="fas fa-blender-phone"></i>+2348132933439</a>
-                                </li> -->
-                                <li>
-                                    <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">{{Auth::user()->email}}</span></a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fas fa-location-arrow"></i>UNIOSUN</a>
-                                </li>
-                            </ul>
-                            <ul class="social-icons">
-                                <li>
-                                    <a href="#0" class="active"><i class="fab fa-facebook-f"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fab fa-instagram"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#0"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="copyright-area">
-                    <div class="footer-bottom-wrapper">
-                        <div class="copyright">
-                            <p>&copy; Copyright 2022 | <a href="#0">Multilingual Online Auction System</a> By <a href="#0">Ademola Toheeb Opeyemi</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+       
+     
     <!--============= Footer Section Ends Here =============-->
 
 
+    <script type="text/javascript">
+
+  
+
+        var url = "{{ route('changeLang') }}";
+    
+      
+    
+        $(".changeLang").change(function(){
+    
+            window.location.href = url + "?lang="+ $(this).val();
+    
+        });
+    
+      
+    
+    </script>
 
     <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
@@ -485,5 +340,24 @@
     <script src="../assets/js/jquery-ui.min.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
+
+<script type="text/javascript">
+
+  
+
+    var url = "{{ route('changeLang') }}";
+
+  
+
+    $(".changeLang").change(function(){
+
+        window.location.href = url + "?lang="+ $(this).val();
+
+    });
+
+  
+
+</script>
+
 
 </html>

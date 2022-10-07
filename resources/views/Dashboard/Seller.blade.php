@@ -276,65 +276,7 @@
 
 
     <!--============= Footer Section Starts Here =============-->
-    <footer class="bg_img padding-top oh" data-background="../assets/images/footer/footer-bg.jpg">
-        <div class="footer-top-shape">
-            <img src="../assets/css/img/footer-top-shape.png" alt="css">
-        </div>
-        <div class="anime-wrapper">
-            <div class="anime-1 plus-anime">
-                <img src="../assets/images/footer/p1.png" alt="footer">
-            </div>
-            <div class="anime-2 plus-anime">
-                <img src="../assets/images/footer/p2.png" alt="footer">
-            </div>
-            <div class="anime-3 plus-anime">
-                <img src="../assets/images/footer/p3.png" alt="footer">
-            </div>
-            <div class="anime-5 zigzag">
-                <img src="../assets/images/footer/c2.png" alt="footer">
-            </div>
-            <div class="anime-6 zigzag">
-                <img src="../assets/images/footer/c3.png" alt="footer">
-            </div>
-            <div class="anime-7 zigzag">
-                <img src="../assets/images/footer/c4.png" alt="footer">
-            </div>
-        </div>
-        <!-- <div class="newslater-wrapper">
-            <div class="container">
-                <div class="newslater-area">
-                    <div class="newslater-thumb">
-                        <img src="assets/images/footer/newslater.png" alt="footer">
-                    </div>
-                    <div class="newslater-content">
-                        <div class="section-header left-style mb-low">
-                            <h5 class="cate">Subscribe to Sbidu</h5>
-                            <h3 class="title">To Get Exclusive Benefits</h3>
-                        </div>
-                        <form class="subscribe-form">
-                            <input type="text" placeholder="Enter Your Email" name="email">
-                            <button type="submit" class="custom-button">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="footer-top padding-bottom padding-top">
-            
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="copyright-area">
-                    <div class="footer-bottom-wrapper">
-                        
-                        <div class="copyright">
-                            <p>&copy; Copyright 2022 | <a href="#0">Multilingual Online Auction System</a> By <a href="#0">Ademola Toheeb Opeyemi</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('component.Footer2')
     <!--============= Footer Section Ends Here =============-->
 
 

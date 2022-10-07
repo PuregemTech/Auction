@@ -1,25 +1,25 @@
-<footer class="bg_img padding-top oh" data-background="assets/images/footer/footer-bg.jpg">
+<footer class="bg_img padding-top oh" data-background="../assets/images/footer/footer-bg.jpg">
     <div class="footer-top-shape">
-        <img src="assets/css/img/footer-top-shape.png" alt="css">
+        <img src="../assets/css/img/footer-top-shape.png" alt="css">
     </div>
     <div class="anime-wrapper">
         <div class="anime-1 plus-anime">
-            <img src="assets/images/footer/p1.png" alt="footer">
+            <img src="../assets/images/footer/p1.png" alt="footer">
         </div>
         <div class="anime-2 plus-anime">
-            <img src="assets/images/footer/p2.png" alt="footer">
+            <img src="../assets/images/footer/p2.png" alt="footer">
         </div>
         <div class="anime-3 plus-anime">
-            <img src="assets/images/footer/p3.png" alt="footer">
+            <img src="../assets/images/footer/p3.png" alt="footer">
         </div>
         <div class="anime-5 zigzag">
-            <img src="assets/images/footer/c2.png" alt="footer">
+            <img src="../assets/images/footer/c2.png" alt="footer">
         </div>
         <div class="anime-6 zigzag">
-            <img src="assets/images/footer/c3.png" alt="footer">
+            <img src="../assets/images/footer/c3.png" alt="footer">
         </div>
         <div class="anime-7 zigzag">
-            <img src="assets/images/footer/c4.png" alt="footer">
+            <img src="../assets/images/footer/c4.png" alt="footer">
         </div>
     </div>
     <div class="footer-top padding-bottom padding-top">
@@ -123,7 +123,6 @@
                         </ul>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
@@ -132,20 +131,20 @@
             <div class="copyright-area">
                 <div class="footer-bottom-wrapper">
                     <!-- <div class="logo">
-                        <a href="index.html"><img src="assets/images/logo/footer-logo.png" alt="logo"></a>
+                        <a href="index.html"><img src="../assets/images/logo/footer-logo.png" alt="logo"></a>
                     </div> -->
                     <!-- <ul class="gateway-area">
                         <li>
-                            <a href="#0"><img src="assets/images/footer/paypal.png" alt="footer"></a>
+                            <a href="#0"><img src="../assets/images/footer/paypal.png" alt="footer"></a>
                         </li>
                         <li>
-                            <a href="#0"><img src="assets/images/footer/visa.png" alt="footer"></a>
+                            <a href="#0"><img src="../assets/images/footer/visa.png" alt="footer"></a>
                         </li>
                         <li>
-                            <a href="#0"><img src="assets/images/footer/discover.png" alt="footer"></a>
+                            <a href="#0"><img src="../assets/images/footer/discover.png" alt="footer"></a>
                         </li>
                         <li>
-                            <a href="#0"><img src="assets/images/footer/mastercard.png" alt="footer"></a>
+                            <a href="#0"><img src="../assets/images/footer/mastercard.png" alt="footer"></a>
                         </li>
                     </ul> -->
                     <div class="copyright">

@@ -26,7 +26,7 @@
         </li>
 
         <li class="nav-item menu-open mb-3 pb-3 user-panel">
-            <a href="{{route("AdminCategory")}}" class="nav-link">
+            <a href="{{route("AdminViewBid")}}" class="nav-link">
                 <i class="nav-icon fas fa-pencil-alt"></i>
                 <p>
                     Manage Bids
