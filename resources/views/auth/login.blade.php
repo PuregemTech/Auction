@@ -160,7 +160,7 @@
                         @csrf
                         <div class="form-group mb-30">
                             <label for="login-email"><i class="far fa-envelope"></i></label>
-                            <input id="email" placeholder="Email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" >
+                            <input id="email" placeholder="{{ __('messages.EmailAddress') }}" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" >
 
 
                             @error('email')
@@ -171,7 +171,7 @@
                         </div>
                         <div class="form-group">
                             <label for="login-pass"><i class="fas fa-lock"></i></label>
-                            <input id="password" placeholder="Password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password">
+                            <input id="password" placeholder="{{ __('messages.password') }}" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -262,6 +262,26 @@
     <script src="../assets/js/jquery-ui.min.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
+
+
+<script type="text/javascript">
+
+  
+
+    var url = "{{ route('changeLang') }}";
+
+  
+
+    $(".changeLang").change(function(){
+
+        window.location.href = url + "?lang="+ $(this).val();
+
+    });
+
+  
+
+</script>
+
 
 
 </html>

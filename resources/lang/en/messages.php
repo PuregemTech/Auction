@@ -14,6 +14,7 @@ return [
 
     "register2" => "Register and create your Account",
     "happy" => "We're happy you're here!",
+    "description" => "Description",
 
     // Seller Register page
     "Name" => "Name",
@@ -64,7 +65,9 @@ return [
     "active_sell" => "Active Selling Items",
     "Items_Sold" => "Items Sold",
     "current" => "Current",
+    "currentH" => "Current Highest Bidding Price",
     //  SubText
+    "end" => "This Auction Ends in",
     'subText1' => "Affordable Books are available",
     "NEWHERE" => "NEW WHERE",
     "contact_us" => "Contact Us",
@@ -74,6 +77,8 @@ return [
     "product_category" => "Product Category",
     'condition' => 'Condition',
     "Price" => "Price",
+    "active_biding" => "Active Bidding",
+    "Bidder" => "Bidder",
     "starting_date" => "Starting Date",
     "ending_date" => "Ending Date",
     "cover_image" => "Cover Image",
@@ -96,7 +101,7 @@ return [
     "profile_picture" => "Profile Picture",
     "Account_Settings" => "Account Settings",
     'PD' => 'Personal Details',
-    "congrat"=>"Congratulations! You have won the bid of this product. Click on pay for the payment of the product."
+    "congrat" => "Congratulations! You have won the bid of this product. Click on pay for the payment of the product."
 
 
 

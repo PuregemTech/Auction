@@ -200,7 +200,7 @@
                                             <tr>
                                                 <th>S/N</th>
                                                 <th>Name</th>
-                                                <th>Category</th>
+                                                <th></th>
                                                 <th colspan="2" style="text-align: center;">Action</th>
                                             </tr>
                                         </thead>

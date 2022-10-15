@@ -247,7 +247,7 @@
                                             <th>Expires</th> --}}
                                         </thead>
                                         <tbody>
-                                            @foreach ($products as $item)
+                                            @foreach ($bids as $item)
                                                 
                                           
                                             <tr>

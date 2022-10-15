@@ -10,7 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
-
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class AdminController extends Controller
 {
@@ -45,9 +45,16 @@ class AdminController extends Controller
             'password' => 'required'
         ]);
         // Attempt to log the user in
-        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            // if successful, then redirect to their intended location
-            return redirect()->intended(route('AdminUserDashboard'));
+        // if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
+        //     // if successful, then redirect to their intended location
+        //     return redirect()->intended(route('AdminUserDashboard'));
+        // }\
+
+        if (Auth()->guard('admin')->attempt(['email' => $request->input('email'),  'password' => $request->input('password')])) {
+            $user = Auth()->guard('admin')->user();
+            return redirect()->route('AdminUserDashboard')->with('success', 'You are Logged in sucessfully.');
+        } else {
+            return back()->with('error', 'Whoops! invalid email and password.');
         }
 
 
@@ -193,6 +200,8 @@ class AdminController extends Controller
     }
 
 
+
+
     public function EditAdminCategory($id)
     {
 
@@ -223,15 +232,15 @@ class AdminController extends Controller
 
         $allUser = User::all();
         $allCategories = Category::all();
-        $products = Product::all();
         $contacts = Contact::all();
-
-       
-
-      
+        $products  =  DB::table('products')
+            ->join('buyers', 'products.id', '=', 'buyers.product_id')->get();
 
 
-        return view('admin.AdminBid', compact("allUser", 'allCategories', 'products', ));
+
+
+
+        return view('admin.AdminBid', compact("allUser", 'allCategories', 'products',));
     }
 
 

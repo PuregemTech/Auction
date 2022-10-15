@@ -3,6 +3,7 @@
 use App\Http\Controllers\FlutterwaveController;
 use App\Http\Controllers\LangController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckStatus;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'welcome']);
 Auth::routes();
@@ -107,7 +109,7 @@ Route::group(['prefix' => 'winning'], function () {
 
 // ['middleware' => ['auth']
 
-Route::group(['prefix' => 'category',"middleware"=>"auth"], function () {
+Route::group(['prefix' => 'category', "middleware" => "auth"], function () {
     Route::get('item/{id}', [
         App\Http\Controllers\CategoryController::class,
         'Category',
@@ -136,7 +138,7 @@ Route::group(['prefix' => 'profile'], function () {
     ])->name('updatePicture');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', "middleware" => CheckStatus::class], function () {
     Route::get('user', [
         App\Http\Controllers\AdminController::class,
         'ManageUser',
@@ -239,10 +241,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
-    Route::get('login', [App\Http\Controllers\AdminController::class, 'LoginPage'])->name('LoginPage');
-    Route::post('login', [App\Http\Controllers\AdminController::class, 'SubmitLogin'])->name('admin.login.submit');
-
-
+    Route::get('login', [App\Http\Controllers\AdminController::class, 'LoginPage'])->name('LoginPage')->withoutMiddleware([CheckStatus::class]);;
+    Route::post('login', [App\Http\Controllers\AdminController::class, 'SubmitLogin'])->name('admin.login.submit')->withoutMiddleware([CheckStatus::class]);
 });
 
 

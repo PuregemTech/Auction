@@ -257,6 +257,11 @@
 
 
 
+                  
+
+
+
+
 
 
 
@@ -265,6 +270,13 @@
                             <label for="login-email"><i class="far fa-envelope"></i></label>
                             <input type="text" id="email" placeholder="{{ __('messages.EmailAddress') }}" 
                             type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
+                            
+                            
+
+                            <input type="hidden" id="user_type" 
+                            type="user_type" class="form-control @error('user_type') is-invalid @enderror" name="user_type" value="{{"2"}}"  autocomplete="email">
+
+                            
                             {{-- @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

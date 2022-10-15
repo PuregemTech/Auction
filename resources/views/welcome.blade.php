@@ -195,13 +195,13 @@
                     <div class="col-sm-10 col-md-6 col-lg-4">
                         <div class="auction-item-2">
                             <div class="auction-thumb">
-                                <a href="bidder/product-details.html"><img  src="{{ asset('cover/'.$item->cover_image) }}" alt="car"></a>
+                                <a href="/product/bid/{{$item->id}}"><img  src="{{ asset('cover/'.$item->cover_image) }}" alt="car"></a>
                                 <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                 <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                             </div>
                             <div class="auction-content">
                                 <h6 class="title">
-                                    <a href="bidder/product-details.html">{{$item->name}}</a>
+                                    <a href="/product/bid/{{$item->id}}">{{$item->name}}</a>
                                 </h6>
                                 <div class="bid-area">
                                     <div class="bid-amount" style="width: 100%;">
@@ -265,13 +265,13 @@
             <div class="col-sm-10 col-md-6 col-lg-4">
                 <div class="auction-item-2">
                     <div class="auction-thumb">
-                        <a href="bidder/product-details.html"><img  src="{{ asset('cover/'.$item->cover_image) }}" alt="car">®</a>
+                        <a href="/product/bid/{{$item->id}}"><img  src="{{ asset('cover/'.$item->cover_image) }}" alt="car">®</a>
                         <a href="#0" class="rating"><i class="far fa-star"></i></a>
                         <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                     </div>
                     <div class="auction-content">
                         <h6 class="title">
-                            <a href="bidder/product-details.html">{{$item->name}}</a>
+                            <a href="/product/bid/{{$item->id}}">{{$item->name}}</a>
                         </h6>
                         <div class="bid-area">
                             <div class="bid-amount" style="width: 100%;">
@@ -323,7 +323,11 @@
                 <h3 class="title">{{ __('messages.message3') }}</h3>
                 <!-- <p>From cars to diamonds to iPhones, we have it all.</p> -->
             </div>
-            <a href="/register" class="custom-button white">{{ __('messages.register1') }}</a>
+           @if (Auth::check())
+            
+           @else
+           <a href="/register" class="custom-button white">{{ __('messages.register1') }}</a>
+           @endif
         </div>
     </div>
 </section>
@@ -342,13 +346,13 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2">
                         <div class="auction-thumb">
-                            <a href="bidder/product-details.html"><img  src="{{ asset('cover/'.$item->cover_image) }}" alt="car"></a>
+                            <a href="/product/bid/{{$item->id}}"><img  src="{{ asset('cover/'.$item->cover_image) }}" alt="car"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
                         <div class="auction-content">
                             <h6 class="title">
-                                <a href="bidder/product-details.html">{{$item->name}}</a>
+                                <a href="/product/bid/{{$item->id}}">{{$item->name}}</a>
                             </h6>
                             <div class="bid-area">
                                 <div class="bid-amount" style="width: 100%;">

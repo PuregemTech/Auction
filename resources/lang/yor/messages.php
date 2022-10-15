@@ -56,8 +56,9 @@ return [
     "expires" => "Ipari",
     "Account_Settings" => "Eto iroyin",
     "PD" => 'Awọn alaye ti ara ẹni',
+    "description" => "Apejuwe",
 
-
+    "currentH" => "Lọwọlọwọ Ga Kalokalo Price",
 
 
     "Auction" => "Titaja",
@@ -86,6 +87,9 @@ return [
     "Price" => "Iye owo",
     "starting_date" => "Ọjọ ibẹrẹ",
     "ending_date" => "Ọjọ ipari",
+    "end" => "Titaja yii dopin ni",
+    "Bidder" => "Olufowole",
+    "active_biding" => "Ti nṣiṣe lọwọ Kalokalo",
     "cover_image" => "Aworan Ideri",
     "max" => "O pọju awọn aworan mefa",
     'product_d' => "Oja Apejuwe",

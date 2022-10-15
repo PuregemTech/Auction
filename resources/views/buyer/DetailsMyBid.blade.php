@@ -292,8 +292,8 @@
                         <div class="product-details-header">
                             <h2 class="title">The Breeze Zodiac IX</h2>
                             <ul>
-                                <li>Listing ID: 14076242</li>
-                                <li>Item #: 7300-3356862</li>
+                                <li></li>
+                                <li></li>
                             </ul>
                         </div>
                         <ul class="price-table mb-30">

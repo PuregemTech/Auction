@@ -15,6 +15,15 @@
     <!-- <div class="container-fluid logo text-center">
         <img src="images/logo.jpg" alt="">
     </div> -->
+
+    <p> @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+     @endif</p>
+
+
+     
     <div class="container-fluid login mb-3 pb-5" style="margin-top: 10%;">
         <form   method="POST"  action="{{ route('admin.login.submit') }}">
             @csrf

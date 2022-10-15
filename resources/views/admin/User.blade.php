@@ -210,7 +210,7 @@
                                         <tbody>
                                         @foreach ($allUser as $user)
                                         <tr>
-                                            <td>1</td>
+                                            <td>{{$user->id}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>
                                                 @if ($user->user_type=="1")
