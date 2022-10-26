@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('category');
             $table->string('cover_image');
             $table->string('uniqueId');
+            $table->string('paid_item')->nullable();
             $table->longText('description');
             $table->string('starting_date')->nullable();
             $table->string('gender')->nullable();

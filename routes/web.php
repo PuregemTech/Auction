@@ -98,6 +98,10 @@ Route::group(['prefix' => 'Buyer'], function () {
         App\Http\Controllers\ProfileController::class,
         'buyer',
     ])->name('BuyerpersonalProfile');
+    Route::get('paid', [
+        App\Http\Controllers\BuyerController::class,
+        'showUserThatHavePaid',
+    ])->name('showUserThatHavePaid');
 });
 
 Route::group(['prefix' => 'winning'], function () {
@@ -271,7 +275,7 @@ Route::get('lang/change', [LangController::class, 'change'])->name(
 // RaveController@callback
 
 // The route that the button calls to initialize payment
- Route::post('/pay', [FlutterwaveController::class, 'initialize'])->name('pay');
+Route::post('/pay', [FlutterwaveController::class, 'initialize'])->name('pay');
 // The callback url after a payment
 Route::get('/rave/callback', [FlutterwaveController::class, 'callback'])->name(
     'callback'

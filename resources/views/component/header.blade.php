@@ -16,6 +16,9 @@
             {{ __('messages.Auction') }}        
         </a>
     </li>
+
+
+    
     @endif
    
 
@@ -46,7 +49,7 @@
 </li>
 
 @elseif(Auth::check()&& Auth::user()->user_type==2)
-
+,
 <li>
     <a> {{ __('messages.Dashboard') }}</a>
     <ul class="submenu">
@@ -62,6 +65,11 @@
             </a>
            
          
+        </li>
+        <li>
+            <a href="{{route('showUserThatHavePaid')}}">
+                {{ __('messages.paid_item') }}        
+            </a>
         </li>
         
         {{-- <li>

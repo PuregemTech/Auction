@@ -120,4 +120,12 @@ class BuyerController extends Controller
 
         return view("buyer.MyBid", compact('MyBids'));
     }
+
+
+    public function showUserThatHavePaid()
+    {
+        $products  = DB::table('products')->where('paid_item',  Auth::id())->get();
+
+        return view("buyer.Paid", compact('products'));
+    }
 }

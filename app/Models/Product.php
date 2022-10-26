@@ -9,7 +9,7 @@ use App\Models\Image;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'price', 'condition', 'image', 'description', 'category', 'user_id', "product_id", "cover_image", "uniqueId", "category_name"];
+    protected $fillable = ['name', 'price', 'condition', 'image', 'description', 'category', 'user_id', "product_id", "cover_image", "uniqueId", "category_name", "paid_item"];
 
     public function User()
 

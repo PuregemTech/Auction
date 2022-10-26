@@ -90,6 +90,7 @@ return [
     "end" => "Titaja yii dopin ni",
     "Bidder" => "Olufowole",
     "active_biding" => "Ti nṣiṣe lọwọ Kalokalo",
+    "paid_item"=>"Nkan ti o san",
     "cover_image" => "Aworan Ideri",
     "max" => "O pọju awọn aworan mefa",
     'product_d' => "Oja Apejuwe",
