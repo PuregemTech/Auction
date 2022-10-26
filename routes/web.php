@@ -271,7 +271,7 @@ Route::get('lang/change', [LangController::class, 'change'])->name(
 // RaveController@callback
 
 // The route that the button calls to initialize payment
-Route::post('/pay', [FlutterwaveController::class, 'initialize'])->name('pay');
+ Route::post('/pay', [FlutterwaveController::class, 'initialize'])->name('pay');
 // The callback url after a payment
 Route::get('/rave/callback', [FlutterwaveController::class, 'callback'])->name(
     'callback'
