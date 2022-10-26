@@ -38,18 +38,8 @@
         <div class="header-top">
             <div class="container">
                 <div class="header-top-wrapper">
-                    <ul class="customer-support">
-                        <!-- <li>
-                            <a href="#0" class="mr-3"><i class="fas fa-phone-alt"></i><span class="ml-2 d-none d-sm-inline-block">Customer Support</span></a>
-                        </li> -->
-                        <li>
-                            <i class="fas fa-globe"></i>
-                            <select name="language" class="select-bar">
-                                <option value="en">En</option>
-                                <option value="Bn">Yor</option>
-                            </select>
-                        </li>
-                    </ul>
+                    
+                    @include('component.trans')
                     <ul class="cart-button-area">
                       
                         <li>
@@ -517,5 +507,25 @@
     <script src="../../assets/js/jquery-ui.min.js"></script>
     <script src="../../assets/js/main.js"></script>
 </body>
+
+
+
+<script type="text/javascript">
+
+  
+
+    var url = "{{ route('changeLang') }}";
+
+  
+
+    $(".changeLang").change(function(){
+
+        window.location.href = url + "?lang="+ $(this).val();
+
+    });
+
+  
+
+</script>
 
 </html>

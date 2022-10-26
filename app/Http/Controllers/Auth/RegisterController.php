@@ -77,7 +77,9 @@ class RegisterController extends Controller
             'mobile' => $data['mobile'],
             'user_type' => isset($data['user_type']) ? $data['user_type'] : '1',
             'gender' => isset($data['gender']) ? $data['gender'] : '',
-            'status' => isset($data['status']) ? $data['status'] : '2',
+            'paid_user' => isset($data['paid_user']) ? $data['paid_user'] : '',
+
+
 
             'dob' => isset($data['dob']) ? $data['dob'] : ' ',
             'address' =>  isset($data['address']) ? $data['address'] : ' ',

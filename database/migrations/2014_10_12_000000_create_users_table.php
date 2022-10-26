@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('bank_acc')->nullable();
             $table->string('user_type')->default("1");
+            $table->string('paid_user')->default(" ");
             // 1->seller
             // 2->buyer
             // 3->admin
