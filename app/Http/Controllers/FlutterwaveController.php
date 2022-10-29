@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use KingFlamez\Rave\Facades\Rave as Flutterwave;
 use Illuminate\Http\Request;
+
 class FlutterwaveController extends Controller
 {
     /**
@@ -16,9 +18,18 @@ class FlutterwaveController extends Controller
     {
 
         //This generates a payment reference
+        dd($request->user_id);
+
+        $page = Product::find($request->id);
+        dd($page);
+
+
+
+
+
         $data = [
             "tx_ref" => rand(),
-            "amount" =>$request->amount,
+            "amount" => $request->amount,
             "currency" => 'NGN',
             "redirect_url" => route('callback'),
             'customer' => [

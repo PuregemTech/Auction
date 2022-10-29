@@ -231,10 +231,11 @@
                                 <form method="POST" action="{{ route('pay') }}" id="paymentForm">
                                     {{ csrf_field() }}
                                     <input type="hidden" name="amount" value="{{$MAX_PRICE}}" /> 
+                                    <input type="hidden" name="description" value="{{$products->id}}" />
                                     <input type="hidden" name="description" value="{{$products->description}}" />
                                     <input type="hidden" name="email" value="{{Auth::user()->email}}" /> 
                                     <button class="custom-button" type="submit">
-                                        Pay
+                                      PAY
                                     </button> 
 
                                 </form>

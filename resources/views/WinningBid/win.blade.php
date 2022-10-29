@@ -209,12 +209,13 @@
                    
                     <div class="row mb-30-none justify-content-center">
                         @foreach ($products as $product)
+
                         <div class="col-sm-10 col-md-6">
                             <div class="auction-item-2">
                                 <div>{{ __('messages.congrat') }}</div>
                                 <div class="auction-thumb">
                                     <a ><img  src="{{ asset('cover/'.$product->cover_image) }}" alt="car"></a>
-                                    
+                                  
                                     <a href="" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
                                 <div class="auction-content">
@@ -235,6 +236,7 @@
                                     <div class="text-center">
                                         <form method="POST" action="{{ route('pay') }}" id="paymentForm">
                                             {{ csrf_field() }}
+                                            
                                             <input type="hidden" name="amount" value="{{$product->price}}" /> 
                                             <input type="hidden" name="description" value="{{$product->description}}" />
                                             <input type="hidden" name="email" value="{{Auth::user()->email}}" /> 
