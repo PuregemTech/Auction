@@ -238,6 +238,7 @@
                                             {{ csrf_field() }}
                                             
                                             <input type="hidden" name="amount" value="{{$product->price}}" /> 
+                                            <input type="hidden" name="id" value="{{$product->id}}" /> 
                                             <input type="hidden" name="description" value="{{$product->description}}" />
                                             <input type="hidden" name="email" value="{{Auth::user()->email}}" /> 
                                             <button class="custom-button" type="submit">

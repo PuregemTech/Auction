@@ -18,10 +18,12 @@ class FlutterwaveController extends Controller
     {
 
         //This generates a payment reference
-        dd($request->user_id);
+     
+        
 
-        $page = Product::find($request->id);
-        dd($page);
+        $page = Product::where('id', 1)->first();
+    
+       
 
 
 

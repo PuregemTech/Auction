@@ -54,7 +54,7 @@
             <div class="form-group">
                 <div class="input-container">
                     <i class="fas fa-lock icon"></i>
-                    <input type="password" class="form-control" placeholder="" id="numeric_input" name="password"  >
+                    <input type="password" class="form-control" placeholder="" name="password"  >
                     <label for="">Password</label>
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">Please fill out this field.</div>

@@ -175,7 +175,7 @@ class AdminController extends Controller
         $allCategories = Category::all();
         $products = Product::all();
         $contacts = Contact::all();
-        return view('admin.addAdminCategory', compact("allUser", 'allCategories', 'products', 'contacts'));
+        return view('admin.AddAdminCategory', compact("allUser", 'allCategories', 'products', 'contacts'));
     }
 
 
@@ -196,6 +196,7 @@ class AdminController extends Controller
             ->join('products', 'products.category', '=', 'categories.id')->get();
 
 
+        
         return view('category.Item', compact("categories"));
     }
 

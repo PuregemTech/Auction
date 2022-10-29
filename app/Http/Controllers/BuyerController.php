@@ -45,7 +45,7 @@ class BuyerController extends Controller
                 $userSchema = User::first();
                 $offerData = [
                     'name' => Auth::user()->name,
-                    'body' => Auth::user()->name . ' ' . 'has bid bidded an amount of ' . $request->price,
+                    'body' => Auth::user()->name . ' ' . 'has bid an amount of ' . $request->price,
                     'thanks' => 'Thank you',
                     'offerText' => 'Check out the offer',
                     'offerUrl' => url('/'),

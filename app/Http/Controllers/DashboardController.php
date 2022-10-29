@@ -15,19 +15,19 @@ class DashboardController extends Controller
         $products = DB::table('products')
             ->join('users', 'users.id', '=', 'products.user_id')->where("products.ended_bid", '1')->get();
 
- 
 
-    $SoldItem = DB::table('products')->where('products.user_id', Auth::id())
+
+        $SoldItem = DB::table('products')->where('products.user_id', Auth::id())
             ->where('products.ended_bid', '=', 1)->get();
 
 
 
-        $allProducts = DB::table('buyers')
-            ->join('products', 'buyers.id', '=', 'products.user_id')
+        $allProducts = DB::table('products')
             ->where('products.user_id', '=', Auth::id())
             ->get();
 
-        return view("Dashboard.Seller", compact('products', 'allProducts','SoldItem'));
+
+        return view("Dashboard.Seller", compact('products', 'allProducts', 'SoldItem'));
     }
 
     public function BuyerDashboard()
@@ -36,7 +36,7 @@ class DashboardController extends Controller
             ->join('users', 'products.user_id', '=', 'users.id')
             ->where('users.id', Auth::id())
             ->get();
-            
+
 
         $bids = DB::table('products')
             ->join('buyers', 'products.id', '=', 'buyers.product_id')
@@ -44,15 +44,18 @@ class DashboardController extends Controller
             ->get();
 
 
-      
 
-           
+
+
         $itemWon = DB::table('products')
             ->join('buyers', 'products.user_id', '=', 'buyers.user_id')
             ->where('buyers.user_id', Auth::id())
-            ->where('products.ended_bid', 1)
+            ->where('products.ended_bid', '=', 1)
             ->get();
 
-        return view("Dashboard.Buyer", compact('products', 'bids','itemWon'));
+
+
+
+        return view("Dashboard.Buyer", compact('products', 'bids', 'itemWon'));
     }
 }

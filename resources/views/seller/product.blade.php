@@ -435,7 +435,6 @@
 
     <!--============= Footer Section Starts Here =============-->
     
-    @include('component.Footer2')
    
     <!--============= Footer Section Ends Here =============-->
 

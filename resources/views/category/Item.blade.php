@@ -155,7 +155,7 @@
                    <div class="auction-item-2">
                        <div class="auction-thumb">
                            <a href="/seller/details/1"><img  src="{{ asset('/cover/'.$item->cover_image) }}"
-                               style="height:200px;width:200px"
+                               style="object-fit:contain"
                                
                                alt="car"></a>
                            <a href="#0" class="rating"><i class="far fa-star"></i></a>

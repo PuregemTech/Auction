@@ -215,7 +215,7 @@
                     <div class="auction-thumb">
                         
                         <a href="/product/bid/{{$item->product_id}}">
-                            <img src="/cover/{{$item->cover_image}}" style="height: 200px;width:900px" alt="logo" />
+                            <img src="/cover/{{$item->cover_image}}" style="object-cover:'contain" alt="logo" />
                             {{-- <img src="/assets/images/logo/logo2.png" alt="logo"> 
                             <img  src="{{ asset('./cover/'.$item->cover_image) }}" alt="car"></a> --}}
                         <a href="#0" class="rating"><i class="far fa-star"></i></a>

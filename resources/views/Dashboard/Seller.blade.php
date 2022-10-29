@@ -249,7 +249,7 @@
                                             </th>
                                         </thead>
                                         <tbody>
-                                           @foreach ($allProducts as $item)
+                                           @foreach ($allProducts  as $item)
                                            <tr>
                                             <td data-purchase="item">{{$item->name}}</td>
                                             <td data-purchase="bid price">&#x20A6;{{$item->price}}</td>

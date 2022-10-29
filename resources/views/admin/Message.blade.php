@@ -185,7 +185,7 @@
                                     </td>
 
                                     <td class="mailbox-subject">
-                                        <b>Bid Announcement</b> - {{$item->problem}}
+                                      {{$item->problem}}
                                     </td>
 
                                     <td class="mailbox-date">{{$item->created_at->diffForHumans()}}</td>

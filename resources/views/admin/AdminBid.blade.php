@@ -116,6 +116,7 @@
     <div class="wrapper">
         <!-- Navbar -->
         {{-- @include('admin.Navbar') --}}
+        
         <!-- /.navbar -->
 
       
@@ -199,10 +200,10 @@
                                     <table class="table table-head-fixed text-nowrap table-striped">
                                         <thead>
                                             <tr>
-                                                <th>S/N</th>
-                                                <th>Name</th>
-                                                <th>Category</th>
-                                                <th colspan="2" style="text-align: center;">Action</th>
+                                                <th >S/N</th>
+                                                <th colspan="3" >Name</th>
+                                              
+                                                <th >Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>

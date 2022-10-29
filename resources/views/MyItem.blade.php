@@ -200,7 +200,9 @@
                           
                             <div class="auction-item-2">
                                 <div class="auction-thumb">
-                                    <a href="/seller/details/{{$item->id}}"><img  src="{{ asset('/cover/'.$item->cover_image) }}" alt="car"></a>
+                                    <a href="/seller/details/{{$item->id}}"><img  src="{{ asset('/cover/'.$item->cover_image) }}" alt="car"
+                                        style="object-fit: contain;"
+                                        ></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>

@@ -2,7 +2,7 @@
 return [
     "title" => "Find Your",
     "title2" => "Next Deal!",
-    "section1" => "Online Auction is where everyone goes to shop, sell, and give, while discovering variety and affordability.",
+    "section1" => "Online Auction is where everyone goes to shop, sell and discover variety of affordable goods.",
     "category1" => "BOOKS",
     "category2" => "Jewelries",
     "category3" => "Watches",
