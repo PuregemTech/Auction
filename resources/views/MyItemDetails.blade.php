@@ -158,10 +158,10 @@
         <div class="container">
             <div class="product-details-slider-top-wrapper">
                 <div class="product-details-slider owl-theme owl-carousel" id="sync1">
-                    <div class="slide-top-item">
+                    <div >
                         <div class="slide-inner">
                             <img  src="{{ asset('cover/'.$products->cover_image) }}" alt="product"
-                             style="width:30;height:30">
+                             style="object-fit:contain;height:500px">
                         </div>
                     </div>
                     {{-- <div class="slide-top-item">
