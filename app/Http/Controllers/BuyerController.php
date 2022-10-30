@@ -57,7 +57,7 @@ class BuyerController extends Controller
                 // return rediret()->back();
 
                 //     Product::create($input);
-                return back()->with('success', 'Your bid is successfully!. Go to the dashboard');
+                return back()->with('success', 'Your bid is successful! Go to the dashboard');
             }
             // user doesn't exist
 
@@ -66,7 +66,7 @@ class BuyerController extends Controller
             $bids = Buyer::where('buyers.user_id', '=', Auth::id())->where('buyers.product_id', "=", $request->product_id)->get()->first();
             $bids->price = $request->price;
             $bids->save();
-            return back()->with('success', 'Your bid is successfully!. Go to the dashboard');
+            return back()->with('success', 'Your bid is successful! Go to the dashboard');
         }
     }
 
@@ -94,7 +94,7 @@ class BuyerController extends Controller
             // return rediret()->back();
 
             //     Product::create($input);
-            return back()->with('success', 'Your bid is successfully!. Go to the dashboard');
+            return back()->with('success', 'Your bid is successful Go to the dashboard');
         }
     }
 
