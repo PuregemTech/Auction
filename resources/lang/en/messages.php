@@ -88,7 +88,7 @@ return [
     "Personal_Profile" => "Personal Profile",
     "my_item" => "My Item",
     "sell" => "Sell",
-    "message2" => "Online jewelry auctions where you can bid for your favorites jewelry",
+    "message2" => "Online jewelry auctions is where you can bid for your favorites jewelry",
     "message3" => "Register for Free & Start Bidding Now!",
     "sign_up" => "Sign Up",
     "message4" => "How it works",
