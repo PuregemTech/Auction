@@ -12,7 +12,8 @@ class NotificationContoller extends Controller
     //
     public function SellerShowNotificaton()
     {
-        $notifications =  $products = DB::table('notifications')->get();
+        $notifications =    $products = DB::table('notifications')
+            ->join('users', 'users.id', '=', 'notifications.notifiable_id')->get();
 
         // $notifications =  $products = DB::table('notifications')
         // ->where('notifiable_id', Auth::id())

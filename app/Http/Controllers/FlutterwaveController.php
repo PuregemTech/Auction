@@ -20,20 +20,14 @@ class FlutterwaveController extends Controller
         //This generates a payment reference
 
 
-        dd($request->id);
-        $page = Product::find($id);
+       
+        $page = Product::find($request->id);
 
         // Make sure you've got the Page model
         if ($page) {
-            $page->image = 'imagepath';
+            $page->paid_item = Auth::id();
             $page->save();
         }
-
-
-
-
-
-
 
 
 

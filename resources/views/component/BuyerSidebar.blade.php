@@ -20,6 +20,10 @@
     <a href="{{route("SellerNotify")}}"><i class="flaticon-best-seller"></i>
         {{ __('nofication') }}</a>
 </li>
+<li>
+    <a href="{{route("showUserThatHavePaid")}}"><i class="flaticon-best-seller"></i>
+        {{ __('messages.paid_item') }}</a>
+</li>
 {{-- <li>
     <a href="notifications.html"><i class="flaticon-alarm"></i>Notification</a>
 </li> --}}

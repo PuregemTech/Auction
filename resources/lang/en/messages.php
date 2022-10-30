@@ -48,7 +48,7 @@ return [
     "item" => "Item",
     "Sell_Price" => "Sell Price",
     "expires" => "Expires",
-    "paid_item" => "Paid Item",
+    "px" => "Paid Item",
     // Header
 
     // Header

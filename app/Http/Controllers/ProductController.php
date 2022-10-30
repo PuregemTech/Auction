@@ -331,6 +331,16 @@ class ProductController extends Controller
             ->where('product_id', '=', $id)
             ->get();
 
+        $address = DB::table('products')
+            ->join('users', 'users.id', '=', 'products.user_id')
+            ->where('products.id', '=', $id)
+            ->first();
+
+
+
+
+
+
         // dd($bidders);
 
         // dd($min_id);
@@ -361,7 +371,8 @@ class ProductController extends Controller
                 'images',
                 'remaining_days',
                 'MAX_PRICE_USER_ID',
-                'bidders'
+                'bidders',
+                "address"
             )
         );
     }
