@@ -412,9 +412,28 @@
                             </div>
 {{-- Address --}}
                             <div class="item">
-                                <h5 class="subtitle">{{ __('messages.Address') }}</h5>
+                                <h5 class="subtitle">
+                                    
+                                    @if ($products->paid_item==1)
+                                    {{ __('messages.Address') }}
+                                    @else
+                               
+                                    @endif
+                                    
+                                
+                                
+                                </h5>
                                 <ul>
-                                   <li>{!! $address->delivery_address !!}</li>
+                                   <li>
+                                    
+                                    @if ($products->paid_item==1)
+                                    {!! $address->delivery_address !!}
+                                    @else
+                               
+                                    @endif
+
+
+                                   </li>
                                 </ul>
                             </div>
                             
