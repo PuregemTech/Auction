@@ -117,6 +117,11 @@ class BuyerController extends Controller
             ->where('buyers.user_id', Auth::id())
             ->get();
 
+        $MyBids = DB::table('buyers')
+            ->join('products', 'buyers.product_id', '=', 'products.id')
+            ->where('buyers.user_id', Auth::id())
+            ->get();
+
         return view('buyer.MyBid', compact('MyBids'));
     }
 
