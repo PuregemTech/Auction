@@ -225,6 +225,7 @@
                         <h6 class="title">
                             <a href="#0">{{$item->name}}</a>
                         </h6>
+                        
                         <div class="bid-area">
                             <div class="bid-amount" style="width: 100%;">
                                 <div class="icon">

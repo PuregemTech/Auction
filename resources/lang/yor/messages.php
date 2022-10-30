@@ -105,6 +105,10 @@ return [
     'bidon' => 'Ìdú lórí àwọn ọjà wọ̀nyí!',
     'congrat' =>
         'Kú oriire! O ti borí ìdú lórí ọjà yii. Tẹ lóri sanwó fún sísanwó ọjà naa.',
+    'Viewall' => 'wò gbógbo ẹ',
+    'price' => 'Ìyè owó',
+    'submitabid' => 'Sé Ídu',
+    'searchproduct' => 'Se àwarí àwọn ọjá...',
 
     //
     //

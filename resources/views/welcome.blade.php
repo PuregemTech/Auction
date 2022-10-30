@@ -187,7 +187,7 @@
                             <p>{{ __('messages.subText1') }}</p>
                         </div>
                     </div>
-                    <a href="{{route("all")}}" class="normal-button">View All</a>
+                    <a href="{{route("all")}}" class="normal-button">{{ __('messages.Viewall') }}</a>
                 </div>
                 <div class="row justify-content-center mb-30-none">
                    
@@ -210,7 +210,7 @@
                                             <i class="flaticon-auction"></i>
                                         </div>
                                         <div class="amount-content">
-                                            <div class="current">Price</div>
+                                            <div class="current">{{ __('messages.price') }}</div>
                                             <div class="amount">&#x20A6;{{$item->price}}</div>
                                         </div>
                                     </div>
@@ -222,7 +222,7 @@
                                     {{-- <span class="total-bids">30 Bids</span> --}}
                                 </div>
                                 <div class="text-center">
-                                    <a href="product/bid/{{$item->id}}" class="custom-button">Submit a bid</a>
+                                    <a href="product/bid/{{$item->id}}" class="custom-button">{{ __('messages.submitabid') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -281,7 +281,7 @@
                                     <i class="flaticon-auction"></i>
                                 </div>
                                 <div class="amount-content">
-                                    <div class="current">Price</div>
+                                    <div class="current">{{ __('messages.price') }}</div>
                                     <div class="amount">&#x20A6;{{$item->price}}</div>
                                 </div>
                             </div>
@@ -293,7 +293,7 @@
                             {{-- <span class="total-bids">30 Bids</span> --}}
                         </div>
                         <div class="text-center">
-                            <a href="product/bid/{{$item->id}}" class="custom-button">Submit a bid</a>
+                            <a href="product/bid/{{$item->id}}" class="custom-button">{{ __('messages.submitabid') }}</a>
                         </div>
                     </div>
                 </div>
@@ -375,7 +375,7 @@
                                 {{-- <span class="total-bids">30 Bids</span> --}}
                             </div>
                             <div class="text-center">
-                                <a href="product/bid/{{$item->id}}" class="custom-button">Submit a bid</a>
+                                <a href="product/bid/{{$item->id}}" class="custom-button">{{ __('messages.submitabid') }}</a>
                             </div>
                         </div>
                     </div>

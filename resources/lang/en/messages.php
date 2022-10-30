@@ -106,4 +106,8 @@ return [
     'PD' => 'Personal Details',
     'congrat' =>
         'Congratulations! You have won the bid of this product. Click on pay for the payment of the product.',
+    'Viewall' => 'View All',
+    'price' => 'price',
+    'submitabid' => 'Submit A Bid',
+    'searchproduct' => 'Search for products....',
 ];
