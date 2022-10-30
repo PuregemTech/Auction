@@ -228,26 +228,25 @@
                                 {{-- <a class="custom-button">
                                     Pay
                                 </a> --}}
-                                @if ($products->paid_item)
+                    @if ($products->paid_item)
+                        
+                    @else
 
-                                <form method="POST" action="{{ route('pay') }}" id="paymentForm">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" name="amount" value="{{$MAX_PRICE}}" /> 
-                                    <input type="hidden" name="id" value="{{$products->id}}" />
-                                    <input type="hidden" name="description" value="{{$products->description}}" />
-                                    <input type="hidden" name="email" value="{{Auth::user()->email}}" /> 
-                                    <button class="custom-button" type="submit">
-                                      PAY
-                                    </button> 
 
-                                </form>
-                               
-                                    
-                                @else
-                                    
-                                @endif
+                    <form method="POST" action="{{ route('pay') }}" id="paymentForm">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="amount" value="{{$MAX_PRICE}}" /> 
+                        <input type="hidden" name="id" value="{{$products->id}}" />
+                        <input type="hidden" name="description" value="{{$products->description}}" />
+                        <input type="hidden" name="email" value="{{Auth::user()->email}}" /> 
+                        <button class="custom-button" type="submit">
+                        PAY
+                        </button> 
 
-                              
+                    </form>
+                        
+                    @endif
+                                                
                             </div>
                                 
                             @else
@@ -303,8 +302,9 @@
                         </div> -->
                     </div>
                 </div>
-
                 @if ($products->paid_item==1)
+
+                @else
                 <div class="col-lg-4">
                     <div class="product-sidebar-area">
                         <div class="product-single-sidebar mb-3">
@@ -352,13 +352,7 @@
                     </div>
                 </div>
                     
-                @else
-                    
                 @endif
-                
-
-
-                
             </div>
         </div>
     @if ($products->paid_item)
@@ -438,7 +432,21 @@
                                    <li>{!! $products->description !!}</li>
                                 </ul>
                             </div>
-                            
+
+
+                           
+                           @if ($products->paid_item==1)
+                           <div class="item">
+                            <h5 class="subtitle">{{ __('messages.Address') }}</h5>
+                            <ul>
+                               <li>{{$address->delivery_address}}</li>
+                            </ul>
+                        </div>
+                        
+                               
+                           @else
+                               
+                           @endif
                         </div>
                     </div>
                 </div>
