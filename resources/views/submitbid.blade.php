@@ -221,62 +221,65 @@
                                 <h5 class="info">$50.00</h5>
                             </li> -->
                         </ul>
-                       @if ($products->paid_item)
-                       @else
-                       <div class="product-bid-area">
-                        @if ($products->ended_bid==1 && $MAX_PRICE_USER_ID==Auth::id())
+                        <div class="product-bid-area">
+                            @if ($products->ended_bid==1 && $MAX_PRICE_USER_ID==Auth::id())
 
-                        <div class="text-center">
-                            {{-- <a class="custom-button">
-                                Pay
-                            </a> --}}
+                            <div class="text-center">
+                                {{-- <a class="custom-button">
+                                    Pay
+                                </a> --}}
+                                @if ($products->paid_item)
 
-                            <form method="POST" action="{{ route('pay') }}" id="paymentForm">
-                                {{ csrf_field() }}
-                                <input type="hidden" name="amount" value="{{$MAX_PRICE}}" /> 
-                                <input type="hidden" name="id" value="{{$products->id}}" />
-                                <input type="hidden" name="description" value="{{$products->description}}" />
-                                <input type="hidden" name="email" value="{{Auth::user()->email}}" /> 
-                                <button class="custom-button" type="submit">
-                                  PAY
-                                </button> 
+                                <form method="POST" action="{{ route('pay') }}" id="paymentForm">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="amount" value="{{$MAX_PRICE}}" /> 
+                                    <input type="hidden" name="id" value="{{$products->id}}" />
+                                    <input type="hidden" name="description" value="{{$products->description}}" />
+                                    <input type="hidden" name="email" value="{{Auth::user()->email}}" /> 
+                                    <button class="custom-button" type="submit">
+                                      PAY
+                                    </button> 
+
+                                </form>
+                               
+                                    
+                                @else
+                                    
+                                @endif
+
+                              
+                            </div>
+                                
+                            @else
+                            <form class="product-bid-form" method="POST" action="{{route('SubmitBidPage')}}">
+                                @csrf
+                               
+                                <input type="hidden" name="user_id"value={{$products->user_id}}>
+                                <input type="hidden" name="name"value={{$products->name}}>
+                                <input type="hidden" name="product_id" value={{$products->id}}>
+
+                                @if ($products->ended_bid !== "1")
+                                <input type="text" placeholder="Enter your bid amount" name="price">
+                                <button class="custom-button">Submit a bid</button>
+                                @else
+                                     <h6 style="margin-left:130px;margin-top:10px;color:red">Bid has ended</h6>
+                                @endif
+                               
+
+                                <div>
+                                    @foreach ($errors->all() as $error)
+                                    <p style="color:red;margin-left:70px">{{ $error }}</p>
+                                @endforeach
+                                </div>
+                                
+                              
+   
+
 
                             </form>
-                           
-                        </div>
-                            
-                        @else
-                        <form class="product-bid-form" method="POST" action="{{route('SubmitBidPage')}}">
-                            @csrf
-                           
-                            <input type="hidden" name="user_id"value={{$products->user_id}}>
-                            <input type="hidden" name="name"value={{$products->name}}>
-                            <input type="hidden" name="product_id" value={{$products->id}}>
-
-                            @if ($products->ended_bid !== "1")
-                            <input type="text" placeholder="Enter your bid amount" name="price">
-                            <button class="custom-button">Submit a bid</button>
-                            @else
-                                 <h6 style="margin-left:130px;margin-top:10px;color:red">Bid has ended</h6>
                             @endif
-                           
-
-                            <div>
-                                @foreach ($errors->all() as $error)
-                                <p style="color:red;margin-left:70px">{{ $error }}</p>
-                            @endforeach
-                            </div>
-                            
                           
-
-
-
-                        </form>
-                        @endif
-                      
-                    </div>
-                           
-                       @endif
+                        </div>
                         <!-- <div class="buy-now-area">
                             <a href="#0" class="custom-button">Buy Now: $4,200</a>
                             <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
@@ -300,66 +303,91 @@
                         </div> -->
                     </div>
                 </div>
-               @if ($products->paid_item)
 
-               @else
-               <div class="col-lg-4">
-                <div class="product-sidebar-area">
-                    <div class="product-single-sidebar mb-3">
-                        <h6 class="title">{{ __('messages.end') }}</h6>
-                        <div style="color:'red">
-                           {{-- {{\Carbon\Carbon::now();}} --}}
-                        <h4 style="color:red"> {{$remaining_days}} Days Left</h4>
-                        </div>
-                        <div class="side-counter-area">
-                            <div class="side-counter-item">
-                                <div class="thumb">
-                                    <img src="../../assets/images/product/icon1.png" alt="product">
-                                </div>
-                                <div class="content">
-                                    <h3 class="count-title"><span class="counter">
-                                        @if (is_null($count_bidder))
-                              0
-                              @else 
-                             {{$count_bidder}}
-                            @endif</span></h3>
-                                    <p>{{ __('messages.active_biding') }}</p>
-                                </div>
+                @if ($products->paid_item)
+                <div class="col-lg-4">
+                    <div class="product-sidebar-area">
+                        <div class="product-single-sidebar mb-3">
+                            <h6 class="title">{{ __('messages.end') }}</h6>
+                            <div style="color:'red">
+                               {{-- {{\Carbon\Carbon::now();}} --}}
+                            <h4 style="color:red"> {{$remaining_days}} Days Left</h4>
                             </div>
-                            <!-- <div class="side-counter-item">
-                                <div class="thumb">
-                                    <img src="assets/images/product/icon2.png" alt="product">
+                            <div class="side-counter-area">
+                                <div class="side-counter-item">
+                                    <div class="thumb">
+                                        <img src="../../assets/images/product/icon1.png" alt="product">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="count-title"><span class="counter">
+                                            @if (is_null($count_bidder))
+                                  0
+                                  @else 
+                                 {{$count_bidder}}
+                                @endif</span></h3>
+                                        <p>{{ __('messages.active_biding') }}</p>
+                                    </div>
                                 </div>
-                                <div class="content">
-                                    <h3 class="count-title"><span class="counter">203</span></h3>
-                                    <p>Watching</p>
-                                </div>
-                            </div> -->
-                            <!-- <div class="side-counter-item">
-                                <div class="thumb">
-                                    <img src="assets/images/product/icon3.png" alt="product">
-                                </div>
-                                <div class="content">
-                                    <h3 class="count-title"><span class="counter">82</span></h3>
-                                    <p>Total Bids</p>
-                                </div>
-                            </div> -->
+                                <!-- <div class="side-counter-item">
+                                    <div class="thumb">
+                                        <img src="assets/images/product/icon2.png" alt="product">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="count-title"><span class="counter">203</span></h3>
+                                        <p>Watching</p>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="side-counter-item">
+                                    <div class="thumb">
+                                        <img src="assets/images/product/icon3.png" alt="product">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="count-title"><span class="counter">82</span></h3>
+                                        <p>Total Bids</p>
+                                    </div>
+                                </div> -->
+                            </div>
                         </div>
+                        <!-- <a href="#0" class="cart-link">View Shipping, Payment & Auction Policies</a> -->
                     </div>
-                    <!-- <a href="#0" class="cart-link">View Shipping, Payment & Auction Policies</a> -->
                 </div>
-            </div>
-                   
-               @endif
+                    
+                @else
+                    
+                @endif
+                
 
 
+                
             </div>
         </div>
-        @if ($products->paid_item)
-
-        @else
-            
-        @endif
+    @if ($products->paid_item)
+    <div class="product-tab-menu-area mb-40-60 mt-70-100">
+        <div class="container">
+            <ul class="product-tab-menu nav nav-tabs">
+                <li>
+                    <a href="#details" class="active" data-toggle="tab">
+                        <div class="thumb">
+                            <img src="../../assets/images/product/tab1.png" alt="product">
+                        </div>
+                        <div class="content">{{ __('messages.description') }}</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#history" data-toggle="tab">
+                        <div class="thumb">
+                            <img src="../../assets/images/product/tab3.png" alt="product">
+                        </div>
+                        <div class="content">{{ __('messages.Bidder') }} ({{count($bidders)}})</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+        
+    @else
+        
+    @endif
         <div class="container">
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="details">
@@ -408,13 +436,6 @@
                                 <h5 class="subtitle">{{ __('messages.description') }}</h5>
                                 <ul>
                                    <li>{!! $products->description !!}</li>
-                                </ul>
-                            </div>
-{{-- Address --}}
-                            <div class="item">
-                                <h5 class="subtitle">{{ __('messages.Address') }}</h5>
-                                <ul>
-                                   <li>{!! $address->delivery_address !!}</li>
                                 </ul>
                             </div>
                             
