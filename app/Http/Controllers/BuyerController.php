@@ -107,11 +107,11 @@ class BuyerController extends Controller
 
 
 
-        $MyBids  = DB::table('products')
-            ->join('buyers',  'buyers.product_id', '=', 'products.id')->where('buyers.user_id',  Auth::id())->get();
+        $MyBids  = DB::table('buyers')
+            ->join('products',  'buyers.product_id', '=', 'products.id')->where('buyers.user_id',  Auth::id())->get();
 
 
-dd($MyBids);
+
 
 
 
