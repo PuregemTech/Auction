@@ -20,15 +20,6 @@ class FlutterwaveController extends Controller
         //This generates a payment reference
 
 
-        dd($request->id);
-        $page = Page::find($id);
-
-        // Make sure you've got the Page model
-        if ($page) {
-            $page->image = 'imagepath';
-            $page->save();
-        }
-
 
 
 
@@ -39,7 +30,7 @@ class FlutterwaveController extends Controller
 
         $data = [
             "tx_ref" => rand(),
-            "amount" => $request->amount,
+            "amount" =>1000,
             "currency" => 'NGN',
             "redirect_url" => route('callback'),
             'customer' => [
