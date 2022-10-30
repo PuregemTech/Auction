@@ -20,7 +20,15 @@ class FlutterwaveController extends Controller
         //This generates a payment reference
 
 
-       
+
+        // $page = Product::find($request->id);
+
+        // // Make sure you've got the Page model
+        // if ($page) {
+        //     $page->paid_item = Auth::id();
+        //     $page->save();
+        // }
+
         $page = Product::find($request->id);
 
         // Make sure you've got the Page model
@@ -30,10 +38,9 @@ class FlutterwaveController extends Controller
         }
 
 
-
         $data = [
             "tx_ref" => rand(),
-            "amount" => $request->amount,
+            "amount" => 200,
             "currency" => 'NGN',
             "redirect_url" => route('callback'),
             'customer' => [
@@ -45,7 +52,7 @@ class FlutterwaveController extends Controller
         $url = "https://api.flutterwave.com/v3/payments";
         $headers = [
             'Content-Type: application/json',
-            'Authorization: Bearer FLWSECK_TEST-42fbf3113ef95c5a48e0572b84c19050-X' //Secret key of your account 
+            'Authorization: Bearer FLWSECK_TEST-41eebad6314623d3a0966c51468bc0c1-X' //Secret key of your account 
         ];
 
         $curl = curl_init();
@@ -87,7 +94,7 @@ class FlutterwaveController extends Controller
 
             $transactionID = Flutterwave::getTransactionIDFromCallback();
             $data = Flutterwave::verifyTransaction($transactionID);
-            dd($data);
+            return redirect('Buyer/paid');
         } elseif ($status ==  'cancelled') {
             return redirect()->back();
             //Put desired action/code after transaction has been cancelled here

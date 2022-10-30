@@ -96,10 +96,10 @@
                             </li> -->
                             <li>
                                 <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="254d40495565404b424a514d4048400b464a48">
-                                @if (Auth::check())
+                               
 
-                                {{Auth::user()->email}}
-                                @endif    
+                              ademolatoheeb@gmail.com
+                           
                                 
                                 </span></a>
                             </li>
