@@ -228,7 +228,7 @@
                                 {{-- <a class="custom-button">
                                     Pay
                                 </a> --}}
-                    @if ($products->paid_item)
+                    @if ($products->paid_item==1)
                         
                     @else
 
