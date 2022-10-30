@@ -304,7 +304,7 @@
                     </div>
                 </div>
 
-                @if ($products->paid_item)
+                @if ($products->paid_item==1)
                 <div class="col-lg-4">
                     <div class="product-sidebar-area">
                         <div class="product-single-sidebar mb-3">
