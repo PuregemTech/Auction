@@ -20,7 +20,7 @@ class FlutterwaveController extends Controller
         //This generates a payment reference
 
 
-
+        dd($request->id);
         $page = Page::find($id);
 
         // Make sure you've got the Page model

@@ -132,10 +132,10 @@
         <div class="container">
             <div class="product-details-slider-top-wrapper">
                 <div class="product-details-slider owl-theme owl-carousel" id="sync1">
-                    <div class="slide-top-item">
-                        <div class="slide-inner">
+                    <div class="">
+                        <div class="">
                             <img  src="{{ asset('cover/'.$products->cover_image) }}" alt="product"
-                             style="width:30;height:30">
+                             style="object-fit:contain!important;height:600px !important;">
                         </div>
                     </div>
                     {{-- <div class="slide-top-item">
@@ -170,7 +170,8 @@
                     @foreach ($images as $image)
                     <div class="slide-bottom-item">
                         <div class="slide-inner">
-                            <img  src="{{ asset('totalimage/'.$image->image) }}" alt="11car">
+                            <img  src="{{ asset('totalimage/'.$image->image) }}" alt="11car" 
+                            >
 
                         </div>
                     </div>
