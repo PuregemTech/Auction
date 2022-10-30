@@ -182,9 +182,17 @@
                                </div>
                                <span class="total-bids">30 Bids</span>
                            </div> --}}
+                           @if ($item->ended_bid==1)
                            <div class="text-center">
-                               <a href="/product/bid/{{$item->id}}" class="custom-button">Submit a bid</a>
-                           </div>
+                            <a href="/product/bid/{{$item->id}}" class="custom-button">    {{'Bid has ended'}}</a>
+                        </div>
+                       
+                       @else
+                       <div class="text-center">
+                        <a href="/product/bid/{{$item->id}}" class="custom-button">Submit a bid</a>
+                    </div>
+                       @endif
+                         
                        </div>
                    </div>
                </div>

@@ -439,7 +439,7 @@
                            
                            @if ($products->paid_item)
                            <div class="item">
-                            <h5 class="subtitle">{{ __('messages.Address') }}</h5>
+                            <h5 class="subtitle">{{ __('messages.DeliveryAddress') }}</h5>
                             <ul>
                                <li>{{$address->delivery_address}}</li>
                             </ul>
