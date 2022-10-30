@@ -192,7 +192,7 @@ class AdminController extends Controller
 
     public function adminViewCategory($id)
     {
-        $categories  =  DB::table('categories')->where('products.id', $id)
+        $categories  =  DB::table('categories')->where('products.category', $id)
             ->join('products', 'products.category', '=', 'categories.id')->get();
 
 
