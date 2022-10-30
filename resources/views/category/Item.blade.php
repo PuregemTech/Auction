@@ -154,8 +154,8 @@
                <div class="col-sm-10 col-md-6 col-lg-4">
                    <div class="auction-item-2">
                        <div class="auction-thumb">
-                           <a href="/seller/details/1"><img  src="{{ asset('/cover/'.$item->cover_image) }}"
-                               style="object-fit:contain"
+                           <a href="/seller/details/{{$item->id}}"><img  src="{{ asset('/cover/'.$item->cover_image) }}"
+                               style="object-fit:contain;height:200px"
                                
                                alt="car"></a>
                            <a href="#0" class="rating"><i class="far fa-star"></i></a>
@@ -163,7 +163,7 @@
                        </div>
                        <div class="auction-content">
                            <h6 class="title">
-                               <a href="#0">{{$item->name}}</a>
+                               <a href="/seller/details/{{$item->id}}">{{$item->name}}</a>
                            </h6>
                            <div class="bid-area">
                                <div class="bid-amount" style="width: 100%;">
