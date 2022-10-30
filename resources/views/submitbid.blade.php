@@ -228,7 +228,7 @@
                                 {{-- <a class="custom-button">
                                     Pay
                                 </a> --}}
-                    @if ($products->paid_item==1)
+                    @if ($products->paid_item)
                         
                     @else
 
@@ -302,7 +302,7 @@
                         </div> -->
                     </div>
                 </div>
-                @if ($products->paid_item==1)
+                @if ($products->paid_item)
 
                 @else
                 <div class="col-lg-4">
@@ -437,7 +437,7 @@
 
 
                            
-                           @if ($products->paid_item==1)
+                           @if ($products->paid_item)
                            <div class="item">
                             <h5 class="subtitle">{{ __('messages.Address') }}</h5>
                             <ul>
