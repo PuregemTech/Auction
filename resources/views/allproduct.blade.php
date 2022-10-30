@@ -57,7 +57,7 @@
                     
                     @include('component.header')
                     <form class="search-form" action="{{ route('search') }}" method="GET">
-                        <input type="text" name="search" placeholder="Search for products....">
+                        <input type="text" name="search" placeholder="{{ __('messages.searchproduct') }}">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
                     <div class="search-bar d-md-none">
@@ -179,7 +179,7 @@
                             <i class="flaticon-auction"></i>
                         </div>
                         <div class="amount-content">
-                            <div class="current">Price</div>
+                            <div class="current">{{ __('messages.price') }}</div>
                             <div class="amount">&#x20A6;{{$item->price}}</div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                         @if ($item->ended_bid==1)
                             {{'Bid has ended'}}
                         @else
-                        {{'Submit a bid'}}
+                        {{ __('messages.submitabid') }}
                         @endif
 
                    
