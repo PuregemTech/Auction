@@ -305,7 +305,10 @@
                 </div>
 
                 @if ($products->paid_item==1)
-                <div class="col-lg-4">
+               
+                    
+                @else
+                     <div class="col-lg-4">
                     <div class="product-sidebar-area">
                         <div class="product-single-sidebar mb-3">
                             <h6 class="title">{{ __('messages.end') }}</h6>
@@ -351,9 +354,6 @@
                         <!-- <a href="#0" class="cart-link">View Shipping, Payment & Auction Policies</a> -->
                     </div>
                 </div>
-                    
-                @else
-                    
                 @endif
                 
 
