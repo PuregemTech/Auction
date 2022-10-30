@@ -356,6 +356,10 @@
             </div>
         </div>
     @if ($products->paid_item)
+   
+        
+    @else
+
     <div class="product-tab-menu-area mb-40-60 mt-70-100">
         <div class="container">
             <ul class="product-tab-menu nav nav-tabs">
@@ -378,8 +382,6 @@
             </ul>
         </div>
     </div>
-        
-    @else
         
     @endif
         <div class="container">
