@@ -86,7 +86,7 @@
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner-content cl-white">
                         <h5 class="cate">Multilingual Online Auction System</h5>
-                        <h1 class="title"><span class="d-xl-block">{{ __('messages.title') }}</span>{{ __('messages.title2') }}</h1>
+                        <h6 class="title" style="font-size: 50px"><span class="d-xl-block">{{ __('messages.title') }}</span>{{ __('messages.title2') }}</h6>
                         <p>
                             {{ __('messages.section1') }}
                         </p>

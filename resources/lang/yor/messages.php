@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'title' => 'Wa Iṣowo',
-    'title2' => 'Rẹ t’okan!',
+    'title' => 'Ṣe Àwàrí Ìsòwò Tí Ó',
+    'title2' => 'Dára Jùlọ  Lórí Àwọn Ọjà Rẹ!',
     'section1' =>
         'Tìtajà orí ayélujára jẹ́ ibiti gbogbo ènìyán lọ lati rajà, ta, ati ṣe àwàrí ọ̀pọ̀lọpọ̀ ọjà tí kò gunpá.',
     'category1' => 'Àwọn Ìwé',
