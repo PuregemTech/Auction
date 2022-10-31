@@ -1,7 +1,7 @@
 <?php
 return [
-    'title' => 'Find Your',
-    'title2' => 'Next Deal!',
+    'title' => 'Find The Best Deal',
+    'title2' => 'On Your Products!',
     'section1' =>
         'Online Auction is where everyone goes to shop, sell and discover variety of affordable goods.',
     'category1' => 'BOOKS',
@@ -74,7 +74,7 @@ return [
     'contact_us' => 'Contact Us',
     'get_in_touch' => 'Get in Touch',
     'message1' =>
-        'kindly fill the correct details of the goods you want to sell.',
+        'kindly fill the correct details of the products you want to sell.',
     'product_name' => 'Product Name',
     'product_category' => 'Product Category',
     'condition' => 'Condition',

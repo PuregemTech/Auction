@@ -247,7 +247,7 @@
             <div class="account-wrapper mt--100 mt-lg--440">
                 <div class="left-side" style="width: 100%;">
                     <div class="section-header">
-                        <h3 class="title">{{ __('messages.message1') }}</h3>
+                        <h3 class="title" style="font-size: 30px;">{{ __('messages.message1') }}</h3>
                         <p style="font-size: 20px;">
 
                             @if (session('success'))
