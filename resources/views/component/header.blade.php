@@ -75,7 +75,9 @@
         {{-- <li>
             <a href="bidder/winning-bids.html">Winning Bids</a>
         </li> --}}
-        
+        <li>
+            <a href="{{route("SellerNotify")}}">Notification</a>
+        </li>
         <!-- <li>
             <a href="my-favorites.html">My Favorites</a>
         </li> -->
